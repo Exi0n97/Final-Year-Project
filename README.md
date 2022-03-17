@@ -1,5 +1,6 @@
 # Final Year Project
-Collection of simplified DeFi contracts for attacks/simulations. As part of Final Year Project
+Collection of simplified DeFi contracts for attacks/simulations. As part of Final Year Project.
+
 Environment used to run scripts
 
 Ubuntu 18.04
