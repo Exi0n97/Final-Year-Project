@@ -13,5 +13,9 @@ Brownie v1.16.4
 
 Ganache v7.0.2
 
-To run scripts, start up ganache 7 in a terminal, then run brownie script in another terminal
+Startup 1 terminal and run ganache
+
+Start another terminal in directory of concern and type "brownie run <scriptname>" to build files and run the script
+
+
 
