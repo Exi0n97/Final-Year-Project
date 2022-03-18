@@ -1,0 +1,5544 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "AdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "beacon",
+          "type": "address"
+        }
+      ],
+      "name": "BeaconUpgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "current",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decrement",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "increment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "reset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "21": "contracts/openzeppelin/contracts/mocks/CountersImpl.sol",
+    "83": "contracts/openzeppelin/contracts/mocks/UUPS/TestInProd.sol",
+    "86": "contracts/openzeppelin/contracts/proxy/ERC1967/ERC1967Upgrade.sol",
+    "94": "contracts/openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/openzeppelin/contracts/mocks/UUPS/TestInProd.sol",
+    "exportedSymbols": {
+      "Address": [
+        17544
+      ],
+      "Counters": [
+        17724
+      ],
+      "CountersImpl": [
+        2820
+      ],
+      "ERC1967Upgrade": [
+        8629
+      ],
+      "IBeacon": [
+        8773
+      ],
+      "StorageSlot": [
+        17950
+      ],
+      "UUPSUpgradeable": [
+        9246
+      ],
+      "UUPSUpgradeableBrokenMock": [
+        8147
+      ],
+      "UUPSUpgradeableMock": [
+        8090
+      ],
+      "UUPSUpgradeableUnsafeMock": [
+        8128
+      ]
+    },
+    "id": 8148,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8076,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:83"
+      },
+      {
+        "absolutePath": "contracts/openzeppelin/contracts/mocks/CountersImpl.sol",
+        "file": "../CountersImpl.sol",
+        "id": 8077,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8148,
+        "sourceUnit": 2821,
+        "src": "58:29:83",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/openzeppelin/contracts/proxy/utils/UUPSUpgradeable.sol",
+        "file": "../../proxy/utils/UUPSUpgradeable.sol",
+        "id": 8078,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 8148,
+        "sourceUnit": 9247,
+        "src": "88:47:83",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 8079,
+              "name": "CountersImpl",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2820,
+              "src": "169:12:83"
+            },
+            "id": 8080,
+            "nodeType": "InheritanceSpecifier",
+            "src": "169:12:83"
+          },
+          {
+            "baseName": {
+              "id": 8081,
+              "name": "UUPSUpgradeable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 9246,
+              "src": "183:15:83"
+            },
+            "id": 8082,
+            "nodeType": "InheritanceSpecifier",
+            "src": "183:15:83"
+          }
+        ],
+        "canonicalName": "UUPSUpgradeableMock",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 8090,
+        "linearizedBaseContracts": [
+          8090,
+          9246,
+          8629,
+          2820
+        ],
+        "name": "UUPSUpgradeableMock",
+        "nameLocation": "146:19:83",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              9245
+            ],
+            "body": {
+              "id": 8088,
+              "nodeType": "Block",
+              "src": "357:2:83",
+              "statements": []
+            },
+            "id": 8089,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_authorizeUpgrade",
+            "nameLocation": "304:17:83",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 8086,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "348:8:83"
+            },
+            "parameters": {
+              "id": 8085,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8084,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8089,
+                  "src": "322:7:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8083,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:9:83"
+            },
+            "returnParameters": {
+              "id": 8087,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "357:0:83"
+            },
+            "scope": 8090,
+            "src": "295:64:83",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 8148,
+        "src": "137:224:83",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 8091,
+              "name": "UUPSUpgradeableMock",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 8090,
+              "src": "401:19:83"
+            },
+            "id": 8092,
+            "nodeType": "InheritanceSpecifier",
+            "src": "401:19:83"
+          }
+        ],
+        "canonicalName": "UUPSUpgradeableUnsafeMock",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 8128,
+        "linearizedBaseContracts": [
+          8128,
+          8090,
+          9246,
+          8629,
+          2820
+        ],
+        "name": "UUPSUpgradeableUnsafeMock",
+        "nameLocation": "372:25:83",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              9220
+            ],
+            "body": {
+              "id": 8109,
+              "nodeType": "Block",
+              "src": "499:86:83",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 8101,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8094,
+                        "src": "542:17:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "arguments": [
+                          {
+                            "hexValue": "",
+                            "id": 8104,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "string",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "567:2:83",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                              "typeString": "literal_string \"\""
+                            },
+                            "value": ""
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+                              "typeString": "literal_string \"\""
+                            }
+                          ],
+                          "id": 8103,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "561:5:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
+                            "typeString": "type(bytes storage pointer)"
+                          },
+                          "typeName": {
+                            "id": 8102,
+                            "name": "bytes",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "561:5:83",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 8105,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "561:9:83",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      },
+                      {
+                        "hexValue": "66616c7365",
+                        "id": 8106,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "572:5:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 8098,
+                        "name": "ERC1967Upgrade",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8629,
+                        "src": "509:14:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ERC1967Upgrade_$8629_$",
+                          "typeString": "type(contract ERC1967Upgrade)"
+                        }
+                      },
+                      "id": 8100,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_upgradeToAndCall",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8380,
+                      "src": "509:32:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bytes memory,bool)"
+                      }
+                    },
+                    "id": 8107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "509:69:83",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8108,
+                  "nodeType": "ExpressionStatement",
+                  "src": "509:69:83"
+                }
+              ]
+            },
+            "functionSelector": "3659cfe6",
+            "id": 8110,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upgradeTo",
+            "nameLocation": "436:9:83",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 8096,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "490:8:83"
+            },
+            "parameters": {
+              "id": 8095,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8094,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nameLocation": "454:17:83",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8110,
+                  "src": "446:25:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8093,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "446:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "445:27:83"
+            },
+            "returnParameters": {
+              "id": 8097,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "499:0:83"
+            },
+            "scope": 8128,
+            "src": "427:158:83",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              9239
+            ],
+            "body": {
+              "id": 8126,
+              "nodeType": "Block",
+              "src": "697:81:83",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 8121,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8112,
+                        "src": "740:17:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 8122,
+                        "name": "data",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8114,
+                        "src": "759:4:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      },
+                      {
+                        "hexValue": "66616c7365",
+                        "id": 8123,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "765:5:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 8118,
+                        "name": "ERC1967Upgrade",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8629,
+                        "src": "707:14:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ERC1967Upgrade_$8629_$",
+                          "typeString": "type(contract ERC1967Upgrade)"
+                        }
+                      },
+                      "id": 8120,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_upgradeToAndCall",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8380,
+                      "src": "707:32:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bytes memory,bool)"
+                      }
+                    },
+                    "id": 8124,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "707:64:83",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8125,
+                  "nodeType": "ExpressionStatement",
+                  "src": "707:64:83"
+                }
+              ]
+            },
+            "functionSelector": "4f1ef286",
+            "id": 8127,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upgradeToAndCall",
+            "nameLocation": "600:16:83",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 8116,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "688:8:83"
+            },
+            "parameters": {
+              "id": 8115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8112,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nameLocation": "625:17:83",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8127,
+                  "src": "617:25:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8111,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8114,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "657:4:83",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8127,
+                  "src": "644:17:83",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 8113,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:5:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "616:46:83"
+            },
+            "returnParameters": {
+              "id": 8117,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "697:0:83"
+            },
+            "scope": 8128,
+            "src": "591:187:83",
+            "stateMutability": "payable",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8148,
+        "src": "363:417:83",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 8129,
+              "name": "UUPSUpgradeableMock",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 8090,
+              "src": "820:19:83"
+            },
+            "id": 8130,
+            "nodeType": "InheritanceSpecifier",
+            "src": "820:19:83"
+          }
+        ],
+        "canonicalName": "UUPSUpgradeableBrokenMock",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 8147,
+        "linearizedBaseContracts": [
+          8147,
+          8090,
+          9246,
+          8629,
+          2820
+        ],
+        "name": "UUPSUpgradeableBrokenMock",
+        "nameLocation": "791:25:83",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              9220
+            ],
+            "body": {
+              "id": 8136,
+              "nodeType": "Block",
+              "src": "900:23:83",
+              "statements": []
+            },
+            "functionSelector": "3659cfe6",
+            "id": 8137,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upgradeTo",
+            "nameLocation": "855:9:83",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 8134,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "891:8:83"
+            },
+            "parameters": {
+              "id": 8133,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8132,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8137,
+                  "src": "865:7:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "865:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "864:9:83"
+            },
+            "returnParameters": {
+              "id": 8135,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "900:0:83"
+            },
+            "scope": 8147,
+            "src": "846:77:83",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "external"
+          },
+          {
+            "baseFunctions": [
+              9239
+            ],
+            "body": {
+              "id": 8145,
+              "nodeType": "Block",
+              "src": "1012:23:83",
+              "statements": []
+            },
+            "functionSelector": "4f1ef286",
+            "id": 8146,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upgradeToAndCall",
+            "nameLocation": "938:16:83",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 8143,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1003:8:83"
+            },
+            "parameters": {
+              "id": 8142,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8139,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8146,
+                  "src": "955:7:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8138,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "955:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8141,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8146,
+                  "src": "964:12:83",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 8140,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "964:5:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "954:23:83"
+            },
+            "returnParameters": {
+              "id": 8144,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1012:0:83"
+            },
+            "scope": 8147,
+            "src": "929:106:83",
+            "stateMutability": "payable",
+            "virtual": true,
+            "visibility": "external"
+          }
+        ],
+        "scope": 8148,
+        "src": "782:255:83",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:1005:83"
+  },
+  "bytecode": "608060405234801561001057600080fd5b506105ce806100206000396000f3fe6080604052600436106100555760003560e01c80632baeceb71461005a5780633659cfe6146100715780634f1ef286146100915780639fa6a6e3146100a4578063d09de08a146100c6578063d826f88f146100db575b600080fd5b34801561006657600080fd5b5061006f6100f0565b005b34801561007d57600080fd5b5061006f61008c366004610403565b6100fc565b61006f61009f366004610434565b61011a565b3480156100b057600080fd5b5060005460405190815260200160405180910390f35b3480156100d257600080fd5b5061006f61012a565b3480156100e757600080fd5b5061006f610138565b6100fa6000610141565b565b6101178160405180602001604052806000815250600061019d565b50565b6101268282600061019d565b5050565b6100fa600080546001019055565b6100fa60008055565b8054806101955760405162461bcd60e51b815260206004820152601b60248201527f436f756e7465723a2064656372656d656e74206f766572666c6f77000000000060448201526064015b60405180910390fd5b600019019055565b6101a6836101c9565b6000825111806101b35750805b156101c4576101c28383610209565b505b505050565b6101d281610235565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b606061022e8383604051806060016040528060278152602001610572602791396102da565b9392505050565b803b6102995760405162461bcd60e51b815260206004820152602d60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973206e60448201526c1bdd08184818dbdb9d1c9858dd609a1b606482015260840161018c565b7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc80546001600160a01b0319166001600160a01b0392909216919091179055565b6060833b6103395760405162461bcd60e51b815260206004820152602660248201527f416464726573733a2064656c65676174652063616c6c20746f206e6f6e2d636f6044820152651b9d1c9858dd60d21b606482015260840161018c565b600080856001600160a01b0316856040516103549190610522565b600060405180830381855af49150503d806000811461038f576040519150601f19603f3d011682016040523d82523d6000602084013e610394565b606091505b50915091506103a48282866103ae565b9695505050505050565b606083156103bd57508161022e565b8251156103cd5782518084602001fd5b8160405162461bcd60e51b815260040161018c919061053e565b80356001600160a01b03811681146103fe57600080fd5b919050565b60006020828403121561041557600080fd5b61022e826103e7565b634e487b7160e01b600052604160045260246000fd5b6000806040838503121561044757600080fd5b610450836103e7565b9150602083013567ffffffffffffffff8082111561046d57600080fd5b818501915085601f83011261048157600080fd5b8135818111156104935761049361041e565b604051601f8201601f19908116603f011681019083821181831017156104bb576104bb61041e565b816040528281528860208487010111156104d457600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60005b838110156105115781810151838201526020016104f9565b838111156101c25750506000910152565b600082516105348184602087016104f6565b9190910192915050565b602081526000825180602084015261055d8160408501602087016104f6565b601f01601f1916919091016040019291505056fe416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220a4151d9c2ab90ccc8abb0d284881633a9a4a678ad604ef250a1ef619992ff52164736f6c634300080c0033",
+  "bytecodeSha1": "2a6d2cd05678a055cd5a61edb58dc7999445809e",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.12+commit.f00d7308"
+  },
+  "contractName": "UUPSUpgradeableUnsafeMock",
+  "coverageMap": {
+    "branches": {
+      "21": {},
+      "83": {},
+      "86": {
+        "ERC1967Upgrade._upgradeToAndCall": {
+          "11": [
+            2235,
+            2250,
+            true
+          ],
+          "12": [
+            2254,
+            2263,
+            false
+          ]
+        }
+      },
+      "94": {}
+    },
+    "statements": {
+      "21": {
+        "CountersImpl.decrement": {
+          "0": [
+            407,
+            427
+          ]
+        },
+        "CountersImpl.increment": {
+          "3": [
+            336,
+            356
+          ]
+        },
+        "CountersImpl.reset": {
+          "4": [
+            474,
+            490
+          ]
+        }
+      },
+      "83": {
+        "UUPSUpgradeableUnsafeMock.upgradeTo": {
+          "1": [
+            509,
+            578
+          ]
+        },
+        "UUPSUpgradeableUnsafeMock.upgradeToAndCall": {
+          "2": [
+            707,
+            771
+          ]
+        }
+      },
+      "86": {
+        "ERC1967Upgrade._setImplementation": {
+          "9": [
+            1476,
+            1571
+          ],
+          "10": [
+            1581,
+            1655
+          ]
+        },
+        "ERC1967Upgrade._upgradeTo": {
+          "7": [
+            1834,
+            1871
+          ],
+          "8": [
+            1881,
+            1913
+          ]
+        },
+        "ERC1967Upgrade._upgradeToAndCall": {
+          "5": [
+            2192,
+            2221
+          ],
+          "6": [
+            2279,
+            2332
+          ]
+        }
+      },
+      "94": {}
+    }
+  },
+  "dependencies": [
+    "CountersImpl",
+    "ERC1967Upgrade",
+    "UUPSUpgradeable",
+    "UUPSUpgradeableMock"
+  ],
+  "deployedBytecode": "6080604052600436106100555760003560e01c80632baeceb71461005a5780633659cfe6146100715780634f1ef286146100915780639fa6a6e3146100a4578063d09de08a146100c6578063d826f88f146100db575b600080fd5b34801561006657600080fd5b5061006f6100f0565b005b34801561007d57600080fd5b5061006f61008c366004610403565b6100fc565b61006f61009f366004610434565b61011a565b3480156100b057600080fd5b5060005460405190815260200160405180910390f35b3480156100d257600080fd5b5061006f61012a565b3480156100e757600080fd5b5061006f610138565b6100fa6000610141565b565b6101178160405180602001604052806000815250600061019d565b50565b6101268282600061019d565b5050565b6100fa600080546001019055565b6100fa60008055565b8054806101955760405162461bcd60e51b815260206004820152601b60248201527f436f756e7465723a2064656372656d656e74206f766572666c6f77000000000060448201526064015b60405180910390fd5b600019019055565b6101a6836101c9565b6000825111806101b35750805b156101c4576101c28383610209565b505b505050565b6101d281610235565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b606061022e8383604051806060016040528060278152602001610572602791396102da565b9392505050565b803b6102995760405162461bcd60e51b815260206004820152602d60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973206e60448201526c1bdd08184818dbdb9d1c9858dd609a1b606482015260840161018c565b7f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc80546001600160a01b0319166001600160a01b0392909216919091179055565b6060833b6103395760405162461bcd60e51b815260206004820152602660248201527f416464726573733a2064656c65676174652063616c6c20746f206e6f6e2d636f6044820152651b9d1c9858dd60d21b606482015260840161018c565b600080856001600160a01b0316856040516103549190610522565b600060405180830381855af49150503d806000811461038f576040519150601f19603f3d011682016040523d82523d6000602084013e610394565b606091505b50915091506103a48282866103ae565b9695505050505050565b606083156103bd57508161022e565b8251156103cd5782518084602001fd5b8160405162461bcd60e51b815260040161018c919061053e565b80356001600160a01b03811681146103fe57600080fd5b919050565b60006020828403121561041557600080fd5b61022e826103e7565b634e487b7160e01b600052604160045260246000fd5b6000806040838503121561044757600080fd5b610450836103e7565b9150602083013567ffffffffffffffff8082111561046d57600080fd5b818501915085601f83011261048157600080fd5b8135818111156104935761049361041e565b604051601f8201601f19908116603f011681019083821181831017156104bb576104bb61041e565b816040528281528860208487010111156104d457600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b60005b838110156105115781810151838201526020016104f9565b838111156101c25750506000910152565b600082516105348184602087016104f6565b9190910192915050565b602081526000825180602084015261055d8160408501602087016104f6565b601f01601f1916919091016040019291505056fe416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220a4151d9c2ab90ccc8abb0d284881633a9a4a678ad604ef250a1ef619992ff52164736f6c634300080c0033",
+  "deployedSourceMap": "363:417:83:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;369:65:21;;;;;;;;;;;;;:::i;:::-;;427:158:83;;;;;;;;;;-1:-1:-1;427:158:83;;;;;:::i;:::-;;:::i;591:187::-;;;;;;:::i;:::-;;:::i;201:91:21:-;;;;;;;;;;-1:-1:-1;241:7:21;864:14:144;201:91:21;;1661:25:171;;;1649:2;1634:18;201:91:21;;;;;;;298:65;;;;;;;;;;;;;:::i;440:57::-;;;;;;;;;;;;;:::i;369:65::-;407:20;:8;:18;:20::i;:::-;369:65::o;427:158:83:-;509:69;542:17;561:9;;;;;;;;;;;;572:5;509:32;:69::i;:::-;427:158;:::o;591:187::-;707:64;740:17;759:4;765:5;707:32;:64::i;:::-;591:187;;:::o;298:65:21:-;336:20;:8;978:19:144;;996:1;978:19;;;891:123;440:57:21;474:16;:8;1331:1:144;1314:18;1255:84;1020:229;1099:14;;1131:9;1123:49;;;;-1:-1:-1;;;1123:49:144;;1899:2:171;1123:49:144;;;1881:21:171;1938:2;1918:18;;;1911:30;1977:29;1957:18;;;1950:57;2024:18;;1123:49:144;;;;;;;;;-1:-1:-1;;1223:9:144;1206:26;;1020:229::o;2054:295:86:-;2192:29;2203:17;2192:10;:29::i;:::-;2249:1;2235:4;:11;:15;:28;;;;2254:9;2235:28;2231:112;;;2279:53;2308:17;2327:4;2279:28;:53::i;:::-;;2231:112;2054:295;;;:::o;1768:152::-;1834:37;1853:17;1834:18;:37::i;:::-;1886:27;;-1:-1:-1;;;;;1886:27:86;;;;;;;;1768:152;:::o;6172:198:141:-;6255:12;6286:77;6307:6;6315:4;6286:77;;;;;;;;;;;;;;;;;:20;:77::i;:::-;6279:84;6172:198;-1:-1:-1;;;6172:198:141:o;1403:259:86:-;1034:20:141;;1476:95:86;;;;-1:-1:-1;;;1476:95:86;;2255:2:171;1476:95:86;;;2237:21:171;2294:2;2274:18;;;2267:30;2333:34;2313:18;;;2306:62;-1:-1:-1;;;2384:18:171;;;2377:43;2437:19;;1476:95:86;2053:409:171;1476:95:86;901:66;1581:74;;-1:-1:-1;;;;;;1581:74:86;-1:-1:-1;;;;;1581:74:86;;;;;;;;;;1403:259::o;6556:388:141:-;6697:12;1034:20;;6721:69;;;;-1:-1:-1;;;6721:69:141;;2669:2:171;6721:69:141;;;2651:21:171;2708:2;2688:18;;;2681:30;2747:34;2727:18;;;2720:62;-1:-1:-1;;;2798:18:171;;;2791:36;2844:19;;6721:69:141;2467:402:171;6721:69:141;6802:12;6816:23;6843:6;-1:-1:-1;;;;;6843:19:141;6863:4;6843:25;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6801:67;;;;6885:52;6903:7;6912:10;6924:12;6885:17;:52::i;:::-;6878:59;6556:388;-1:-1:-1;;;;;;6556:388:141:o;6950:692::-;7096:12;7124:7;7120:516;;;-1:-1:-1;7154:10:141;7147:17;;7120:516;7265:17;;:21;7261:365;;7459:10;7453:17;7519:15;7506:10;7502:2;7498:19;7491:44;7261:365;7598:12;7591:20;;-1:-1:-1;;;7591:20:141;;;;;;;;:::i;14:173:171:-;82:20;;-1:-1:-1;;;;;131:31:171;;121:42;;111:70;;177:1;174;167:12;111:70;14:173;;;:::o;192:186::-;251:6;304:2;292:9;283:7;279:23;275:32;272:52;;;320:1;317;310:12;272:52;343:29;362:9;343:29;:::i;383:127::-;444:10;439:3;435:20;432:1;425:31;475:4;472:1;465:15;499:4;496:1;489:15;515:995;592:6;600;653:2;641:9;632:7;628:23;624:32;621:52;;;669:1;666;659:12;621:52;692:29;711:9;692:29;:::i;:::-;682:39;;772:2;761:9;757:18;744:32;795:18;836:2;828:6;825:14;822:34;;;852:1;849;842:12;822:34;890:6;879:9;875:22;865:32;;935:7;928:4;924:2;920:13;916:27;906:55;;957:1;954;947:12;906:55;993:2;980:16;1015:2;1011;1008:10;1005:36;;;1021:18;;:::i;:::-;1096:2;1090:9;1064:2;1150:13;;-1:-1:-1;;1146:22:171;;;1170:2;1142:31;1138:40;1126:53;;;1194:18;;;1214:22;;;1191:46;1188:72;;;1240:18;;:::i;:::-;1280:10;1276:2;1269:22;1315:2;1307:6;1300:18;1355:7;1350:2;1345;1341;1337:11;1333:20;1330:33;1327:53;;;1376:1;1373;1366:12;1327:53;1432:2;1427;1423;1419:11;1414:2;1406:6;1402:15;1389:46;1477:1;1472:2;1467;1459:6;1455:15;1451:24;1444:35;1498:6;1488:16;;;;;;;515:995;;;;;:::o;2874:258::-;2946:1;2956:113;2970:6;2967:1;2964:13;2956:113;;;3046:11;;;3040:18;3027:11;;;3020:39;2992:2;2985:10;2956:113;;;3087:6;3084:1;3081:13;3078:48;;;-1:-1:-1;;3122:1:171;3104:16;;3097:27;2874:258::o;3137:274::-;3266:3;3304:6;3298:13;3320:53;3366:6;3361:3;3354:4;3346:6;3342:17;3320:53;:::i;:::-;3389:16;;;;;3137:274;-1:-1:-1;;3137:274:171:o;3416:383::-;3565:2;3554:9;3547:21;3528:4;3597:6;3591:13;3640:6;3635:2;3624:9;3620:18;3613:34;3656:66;3715:6;3710:2;3699:9;3695:18;3690:2;3682:6;3678:15;3656:66;:::i;:::-;3783:2;3762:15;-1:-1:-1;;3758:29:171;3743:45;;;;3790:2;3739:54;;3416:383;-1:-1:-1;;3416:383:171:o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {
+      "upgradeTo(address)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "upgradeToAndCall(address,bytes)": {
+        "details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      }
+    },
+    "version": 1
+  },
+  "offset": [
+    363,
+    780
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x55 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x2BAECEB7 EQ PUSH2 0x5A JUMPI DUP1 PUSH4 0x3659CFE6 EQ PUSH2 0x71 JUMPI DUP1 PUSH4 0x4F1EF286 EQ PUSH2 0x91 JUMPI DUP1 PUSH4 0x9FA6A6E3 EQ PUSH2 0xA4 JUMPI DUP1 PUSH4 0xD09DE08A EQ PUSH2 0xC6 JUMPI DUP1 PUSH4 0xD826F88F EQ PUSH2 0xDB JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x66 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0xF0 JUMP JUMPDEST STOP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x7D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0x8C CALLDATASIZE PUSH1 0x4 PUSH2 0x403 JUMP JUMPDEST PUSH2 0xFC JUMP JUMPDEST PUSH2 0x6F PUSH2 0x9F CALLDATASIZE PUSH1 0x4 PUSH2 0x434 JUMP JUMPDEST PUSH2 0x11A JUMP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xB0 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x0 SLOAD PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xD2 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0x12A JUMP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xE7 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0x138 JUMP JUMPDEST PUSH2 0xFA PUSH1 0x0 PUSH2 0x141 JUMP JUMPDEST JUMP JUMPDEST PUSH2 0x117 DUP2 PUSH1 0x40 MLOAD DUP1 PUSH1 0x20 ADD PUSH1 0x40 MSTORE DUP1 PUSH1 0x0 DUP2 MSTORE POP PUSH1 0x0 PUSH2 0x19D JUMP JUMPDEST POP JUMP JUMPDEST PUSH2 0x126 DUP3 DUP3 PUSH1 0x0 PUSH2 0x19D JUMP JUMPDEST POP POP JUMP JUMPDEST PUSH2 0xFA PUSH1 0x0 DUP1 SLOAD PUSH1 0x1 ADD SWAP1 SSTORE JUMP JUMPDEST PUSH2 0xFA PUSH1 0x0 DUP1 SSTORE JUMP JUMPDEST DUP1 SLOAD DUP1 PUSH2 0x195 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1B PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x436F756E7465723A2064656372656D656E74206F766572666C6F770000000000 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD JUMPDEST PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST PUSH1 0x0 NOT ADD SWAP1 SSTORE JUMP JUMPDEST PUSH2 0x1A6 DUP4 PUSH2 0x1C9 JUMP JUMPDEST PUSH1 0x0 DUP3 MLOAD GT DUP1 PUSH2 0x1B3 JUMPI POP DUP1 JUMPDEST ISZERO PUSH2 0x1C4 JUMPI PUSH2 0x1C2 DUP4 DUP4 PUSH2 0x209 JUMP JUMPDEST POP JUMPDEST POP POP POP JUMP JUMPDEST PUSH2 0x1D2 DUP2 PUSH2 0x235 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP3 AND SWAP1 PUSH32 0xBC7CD75A20EE27FD9ADEBAB32041F755214DBC6BFFA90CC0225B39DA2E5C2D3B SWAP1 PUSH1 0x0 SWAP1 LOG2 POP JUMP JUMPDEST PUSH1 0x60 PUSH2 0x22E DUP4 DUP4 PUSH1 0x40 MLOAD DUP1 PUSH1 0x60 ADD PUSH1 0x40 MSTORE DUP1 PUSH1 0x27 DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x572 PUSH1 0x27 SWAP2 CODECOPY PUSH2 0x2DA JUMP JUMPDEST SWAP4 SWAP3 POP POP POP JUMP JUMPDEST DUP1 EXTCODESIZE PUSH2 0x299 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x2D PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x455243313936373A206E657720696D706C656D656E746174696F6E206973206E PUSH1 0x44 DUP3 ADD MSTORE PUSH13 0x1BDD08184818DBDB9D1C9858DD PUSH1 0x9A SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x18C JUMP JUMPDEST PUSH32 0x360894A13BA1A3210667C828492DB98DCA3E2076CC3735A920A3CA505D382BBC DUP1 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB NOT AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP3 SWAP1 SWAP3 AND SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE JUMP JUMPDEST PUSH1 0x60 DUP4 EXTCODESIZE PUSH2 0x339 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x416464726573733A2064656C65676174652063616C6C20746F206E6F6E2D636F PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x1B9D1C9858DD PUSH1 0xD2 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x18C JUMP JUMPDEST PUSH1 0x0 DUP1 DUP6 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP6 PUSH1 0x40 MLOAD PUSH2 0x354 SWAP2 SWAP1 PUSH2 0x522 JUMP JUMPDEST PUSH1 0x0 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP6 GAS DELEGATECALL SWAP2 POP POP RETURNDATASIZE DUP1 PUSH1 0x0 DUP2 EQ PUSH2 0x38F JUMPI PUSH1 0x40 MLOAD SWAP2 POP PUSH1 0x1F NOT PUSH1 0x3F RETURNDATASIZE ADD AND DUP3 ADD PUSH1 0x40 MSTORE RETURNDATASIZE DUP3 MSTORE RETURNDATASIZE PUSH1 0x0 PUSH1 0x20 DUP5 ADD RETURNDATACOPY PUSH2 0x394 JUMP JUMPDEST PUSH1 0x60 SWAP2 POP JUMPDEST POP SWAP2 POP SWAP2 POP PUSH2 0x3A4 DUP3 DUP3 DUP7 PUSH2 0x3AE JUMP JUMPDEST SWAP7 SWAP6 POP POP POP POP POP POP JUMP JUMPDEST PUSH1 0x60 DUP4 ISZERO PUSH2 0x3BD JUMPI POP DUP2 PUSH2 0x22E JUMP JUMPDEST DUP3 MLOAD ISZERO PUSH2 0x3CD JUMPI DUP3 MLOAD DUP1 DUP5 PUSH1 0x20 ADD REVERT JUMPDEST DUP2 PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD PUSH2 0x18C SWAP2 SWAP1 PUSH2 0x53E JUMP JUMPDEST DUP1 CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x3FE JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP2 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x415 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x22E DUP3 PUSH2 0x3E7 JUMP JUMPDEST PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x41 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x447 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x450 DUP4 PUSH2 0x3E7 JUMP JUMPDEST SWAP2 POP PUSH1 0x20 DUP4 ADD CALLDATALOAD PUSH8 0xFFFFFFFFFFFFFFFF DUP1 DUP3 GT ISZERO PUSH2 0x46D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 DUP6 ADD SWAP2 POP DUP6 PUSH1 0x1F DUP4 ADD SLT PUSH2 0x481 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 CALLDATALOAD DUP2 DUP2 GT ISZERO PUSH2 0x493 JUMPI PUSH2 0x493 PUSH2 0x41E JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1F DUP3 ADD PUSH1 0x1F NOT SWAP1 DUP2 AND PUSH1 0x3F ADD AND DUP2 ADD SWAP1 DUP4 DUP3 GT DUP2 DUP4 LT OR ISZERO PUSH2 0x4BB JUMPI PUSH2 0x4BB PUSH2 0x41E JUMP JUMPDEST DUP2 PUSH1 0x40 MSTORE DUP3 DUP2 MSTORE DUP9 PUSH1 0x20 DUP5 DUP8 ADD ADD GT ISZERO PUSH2 0x4D4 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP3 PUSH1 0x20 DUP7 ADD PUSH1 0x20 DUP4 ADD CALLDATACOPY PUSH1 0x0 PUSH1 0x20 DUP5 DUP4 ADD ADD MSTORE DUP1 SWAP6 POP POP POP POP POP POP SWAP3 POP SWAP3 SWAP1 POP JUMP JUMPDEST PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x511 JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x4F9 JUMP JUMPDEST DUP4 DUP2 GT ISZERO PUSH2 0x1C2 JUMPI POP POP PUSH1 0x0 SWAP2 ADD MSTORE JUMP JUMPDEST PUSH1 0x0 DUP3 MLOAD PUSH2 0x534 DUP2 DUP5 PUSH1 0x20 DUP8 ADD PUSH2 0x4F6 JUMP JUMPDEST SWAP2 SWAP1 SWAP2 ADD SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH1 0x20 DUP2 MSTORE PUSH1 0x0 DUP3 MLOAD DUP1 PUSH1 0x20 DUP5 ADD MSTORE PUSH2 0x55D DUP2 PUSH1 0x40 DUP6 ADD PUSH1 0x20 DUP8 ADD PUSH2 0x4F6 JUMP JUMPDEST PUSH1 0x1F ADD PUSH1 0x1F NOT AND SWAP2 SWAP1 SWAP2 ADD PUSH1 0x40 ADD SWAP3 SWAP2 POP POP JUMP INVALID COINBASE PUSH5 0x6472657373 GASPRICE KECCAK256 PUSH13 0x6F772D6C6576656C2064656C65 PUSH8 0x6174652063616C6C KECCAK256 PUSH7 0x61696C6564A264 PUSH10 0x70667358221220A4151D SWAP13 0x2A 0xB9 0xC 0xCC DUP11 0xBB 0xD 0x28 BASEFEE DUP2 PUSH4 0x3A9A4A67 DUP11 0xD6 DIV 0xEF 0x25 EXP 0x1E 0xF6 NOT SWAP10 0x2F CREATE2 0x21 PUSH5 0x736F6C6343 STOP ADDMOD 0xC STOP CALLER ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "MSTORE",
+      "path": "83"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x4"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "CALLDATASIZE",
+      "path": "83"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "LT",
+      "path": "83"
+    },
+    "9": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x55"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "13": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "15": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "CALLDATALOAD",
+      "path": "83"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0xE0"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "SHR",
+      "path": "83"
+    },
+    "19": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0x2BAECEB7"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x5A"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "30": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0x3659CFE6"
+    },
+    "36": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "37": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x71"
+    },
+    "40": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "41": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0x4F1EF286"
+    },
+    "47": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "48": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x91"
+    },
+    "51": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "52": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0x9FA6A6E3"
+    },
+    "58": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "59": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0xA4"
+    },
+    "62": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "63": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0xD09DE08A"
+    },
+    "69": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "70": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0xC6"
+    },
+    "73": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "74": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH4",
+      "path": "83",
+      "value": "0xD826F88F"
+    },
+    "80": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "EQ",
+      "path": "83"
+    },
+    "81": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0xDB"
+    },
+    "84": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "85": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "86": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "88": {
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "89": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        363,
+        780
+      ],
+      "op": "REVERT",
+      "path": "83"
+    },
+    "90": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "91": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "CALLVALUE",
+      "path": "21"
+    },
+    "92": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "93": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "ISZERO",
+      "path": "21"
+    },
+    "94": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x66"
+    },
+    "97": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMPI",
+      "path": "21"
+    },
+    "98": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "100": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "101": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "REVERT",
+      "path": "21"
+    },
+    "102": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "103": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "POP",
+      "path": "21"
+    },
+    "104": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x6F"
+    },
+    "107": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0xF0"
+    },
+    "110": {
+      "fn": "CountersImpl.decrement",
+      "jump": "i",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMP",
+      "path": "21"
+    },
+    "111": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "112": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "STOP",
+      "path": "21"
+    },
+    "113": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "114": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "CALLVALUE",
+      "path": "83"
+    },
+    "115": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "116": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "ISZERO",
+      "path": "83"
+    },
+    "117": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x7D"
+    },
+    "120": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMPI",
+      "path": "83"
+    },
+    "121": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "123": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "124": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "REVERT",
+      "path": "83"
+    },
+    "125": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "126": {
+      "op": "POP"
+    },
+    "127": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x6F"
+    },
+    "130": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x8C"
+    },
+    "133": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "CALLDATASIZE",
+      "path": "83"
+    },
+    "134": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x4"
+    },
+    "136": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x403"
+    },
+    "139": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "jump": "i",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "140": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "141": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0xFC"
+    },
+    "144": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "jump": "i",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "145": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "146": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x6F"
+    },
+    "149": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x9F"
+    },
+    "152": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "CALLDATASIZE",
+      "path": "83"
+    },
+    "153": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x4"
+    },
+    "155": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x434"
+    },
+    "158": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "jump": "i",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "159": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "160": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x11A"
+    },
+    "163": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "jump": "i",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "164": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "165": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "CALLVALUE",
+      "path": "21"
+    },
+    "166": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "167": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "ISZERO",
+      "path": "21"
+    },
+    "168": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0xB0"
+    },
+    "171": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "JUMPI",
+      "path": "21"
+    },
+    "172": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "174": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "175": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "REVERT",
+      "path": "21"
+    },
+    "176": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "177": {
+      "op": "POP"
+    },
+    "178": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        241,
+        248
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "180": {
+      "op": "SLOAD"
+    },
+    "181": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x40"
+    },
+    "183": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "MLOAD",
+      "path": "21"
+    },
+    "184": {
+      "op": "SWAP1"
+    },
+    "185": {
+      "op": "DUP2"
+    },
+    "186": {
+      "op": "MSTORE"
+    },
+    "187": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "189": {
+      "op": "ADD"
+    },
+    "190": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x40"
+    },
+    "192": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "MLOAD",
+      "path": "21"
+    },
+    "193": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "194": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "SWAP2",
+      "path": "21"
+    },
+    "195": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "SUB",
+      "path": "21"
+    },
+    "196": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "SWAP1",
+      "path": "21"
+    },
+    "197": {
+      "fn": "CountersImpl.current",
+      "offset": [
+        201,
+        292
+      ],
+      "op": "RETURN",
+      "path": "21"
+    },
+    "198": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "199": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "CALLVALUE",
+      "path": "21"
+    },
+    "200": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "201": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "ISZERO",
+      "path": "21"
+    },
+    "202": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0xD2"
+    },
+    "205": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "JUMPI",
+      "path": "21"
+    },
+    "206": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "208": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "209": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "REVERT",
+      "path": "21"
+    },
+    "210": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "211": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "POP",
+      "path": "21"
+    },
+    "212": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x6F"
+    },
+    "215": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x12A"
+    },
+    "218": {
+      "fn": "CountersImpl.increment",
+      "jump": "i",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "JUMP",
+      "path": "21"
+    },
+    "219": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "220": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "CALLVALUE",
+      "path": "21"
+    },
+    "221": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "222": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "ISZERO",
+      "path": "21"
+    },
+    "223": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0xE7"
+    },
+    "226": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "JUMPI",
+      "path": "21"
+    },
+    "227": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "229": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "DUP1",
+      "path": "21"
+    },
+    "230": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "REVERT",
+      "path": "21"
+    },
+    "231": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "232": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "POP",
+      "path": "21"
+    },
+    "233": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x6F"
+    },
+    "236": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x138"
+    },
+    "239": {
+      "fn": "CountersImpl.reset",
+      "jump": "i",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "JUMP",
+      "path": "21"
+    },
+    "240": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "241": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        407,
+        427
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "statement": 0,
+      "value": "0xFA"
+    },
+    "244": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        407,
+        415
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "246": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        407,
+        425
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "value": "0x141"
+    },
+    "249": {
+      "fn": "CountersImpl.decrement",
+      "jump": "i",
+      "offset": [
+        407,
+        427
+      ],
+      "op": "JUMP",
+      "path": "21"
+    },
+    "250": {
+      "fn": "CountersImpl.decrement",
+      "offset": [
+        407,
+        427
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "251": {
+      "fn": "CountersImpl.decrement",
+      "jump": "o",
+      "offset": [
+        369,
+        434
+      ],
+      "op": "JUMP",
+      "path": "21"
+    },
+    "252": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "253": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        509,
+        578
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "statement": 1,
+      "value": "0x117"
+    },
+    "256": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        542,
+        559
+      ],
+      "op": "DUP2",
+      "path": "83"
+    },
+    "257": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x40"
+    },
+    "259": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "MLOAD",
+      "path": "83"
+    },
+    "260": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "261": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x20"
+    },
+    "263": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "ADD",
+      "path": "83"
+    },
+    "264": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x40"
+    },
+    "266": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "MSTORE",
+      "path": "83"
+    },
+    "267": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "DUP1",
+      "path": "83"
+    },
+    "268": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "270": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "DUP2",
+      "path": "83"
+    },
+    "271": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "MSTORE",
+      "path": "83"
+    },
+    "272": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        561,
+        570
+      ],
+      "op": "POP",
+      "path": "83"
+    },
+    "273": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        572,
+        577
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "275": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        509,
+        541
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x19D"
+    },
+    "278": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "jump": "i",
+      "offset": [
+        509,
+        578
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "279": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        509,
+        578
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "280": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "POP",
+      "path": "83"
+    },
+    "281": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeTo",
+      "jump": "o",
+      "offset": [
+        427,
+        585
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "282": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "283": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        707,
+        771
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "statement": 2,
+      "value": "0x126"
+    },
+    "286": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        740,
+        757
+      ],
+      "op": "DUP3",
+      "path": "83"
+    },
+    "287": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        759,
+        763
+      ],
+      "op": "DUP3",
+      "path": "83"
+    },
+    "288": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        765,
+        770
+      ],
+      "op": "PUSH1",
+      "path": "83",
+      "value": "0x0"
+    },
+    "290": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        707,
+        739
+      ],
+      "op": "PUSH2",
+      "path": "83",
+      "value": "0x19D"
+    },
+    "293": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "jump": "i",
+      "offset": [
+        707,
+        771
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "294": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        707,
+        771
+      ],
+      "op": "JUMPDEST",
+      "path": "83"
+    },
+    "295": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "POP",
+      "path": "83"
+    },
+    "296": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "POP",
+      "path": "83"
+    },
+    "297": {
+      "fn": "UUPSUpgradeableUnsafeMock.upgradeToAndCall",
+      "jump": "o",
+      "offset": [
+        591,
+        778
+      ],
+      "op": "JUMP",
+      "path": "83"
+    },
+    "298": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        298,
+        363
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "299": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        336,
+        356
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "statement": 3,
+      "value": "0xFA"
+    },
+    "302": {
+      "fn": "CountersImpl.increment",
+      "offset": [
+        336,
+        344
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "304": {
+      "op": "DUP1"
+    },
+    "305": {
+      "op": "SLOAD"
+    },
+    "306": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "308": {
+      "op": "ADD"
+    },
+    "309": {
+      "op": "SWAP1"
+    },
+    "310": {
+      "op": "SSTORE"
+    },
+    "311": {
+      "op": "JUMP"
+    },
+    "312": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        440,
+        497
+      ],
+      "op": "JUMPDEST",
+      "path": "21"
+    },
+    "313": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        474,
+        490
+      ],
+      "op": "PUSH2",
+      "path": "21",
+      "statement": 4,
+      "value": "0xFA"
+    },
+    "316": {
+      "fn": "CountersImpl.reset",
+      "offset": [
+        474,
+        482
+      ],
+      "op": "PUSH1",
+      "path": "21",
+      "value": "0x0"
+    },
+    "318": {
+      "op": "DUP1"
+    },
+    "319": {
+      "op": "SSTORE"
+    },
+    "320": {
+      "op": "JUMP"
+    },
+    "321": {
+      "op": "JUMPDEST"
+    },
+    "322": {
+      "op": "DUP1"
+    },
+    "323": {
+      "op": "SLOAD"
+    },
+    "324": {
+      "op": "DUP1"
+    },
+    "325": {
+      "op": "PUSH2",
+      "value": "0x195"
+    },
+    "328": {
+      "op": "JUMPI"
+    },
+    "329": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "331": {
+      "op": "MLOAD"
+    },
+    "332": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "336": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "338": {
+      "op": "SHL"
+    },
+    "339": {
+      "op": "DUP2"
+    },
+    "340": {
+      "op": "MSTORE"
+    },
+    "341": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "343": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "345": {
+      "op": "DUP3"
+    },
+    "346": {
+      "op": "ADD"
+    },
+    "347": {
+      "op": "MSTORE"
+    },
+    "348": {
+      "op": "PUSH1",
+      "value": "0x1B"
+    },
+    "350": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "352": {
+      "op": "DUP3"
+    },
+    "353": {
+      "op": "ADD"
+    },
+    "354": {
+      "op": "MSTORE"
+    },
+    "355": {
+      "op": "PUSH32",
+      "value": "0x436F756E7465723A2064656372656D656E74206F766572666C6F770000000000"
+    },
+    "388": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "390": {
+      "op": "DUP3"
+    },
+    "391": {
+      "op": "ADD"
+    },
+    "392": {
+      "op": "MSTORE"
+    },
+    "393": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "395": {
+      "op": "ADD"
+    },
+    "396": {
+      "op": "JUMPDEST"
+    },
+    "397": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "399": {
+      "op": "MLOAD"
+    },
+    "400": {
+      "op": "DUP1"
+    },
+    "401": {
+      "op": "SWAP2"
+    },
+    "402": {
+      "op": "SUB"
+    },
+    "403": {
+      "op": "SWAP1"
+    },
+    "404": {
+      "op": "REVERT"
+    },
+    "405": {
+      "op": "JUMPDEST"
+    },
+    "406": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "408": {
+      "op": "NOT"
+    },
+    "409": {
+      "op": "ADD"
+    },
+    "410": {
+      "op": "SWAP1"
+    },
+    "411": {
+      "op": "SSTORE"
+    },
+    "412": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "413": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2054,
+        2349
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "414": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2192,
+        2221
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "statement": 5,
+      "value": "0x1A6"
+    },
+    "417": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2203,
+        2220
+      ],
+      "op": "DUP4",
+      "path": "86"
+    },
+    "418": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2192,
+        2202
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x1C9"
+    },
+    "421": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "jump": "i",
+      "offset": [
+        2192,
+        2221
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "422": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2192,
+        2221
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "423": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2249,
+        2250
+      ],
+      "op": "PUSH1",
+      "path": "86",
+      "value": "0x0"
+    },
+    "425": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2239
+      ],
+      "op": "DUP3",
+      "path": "86"
+    },
+    "426": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2246
+      ],
+      "op": "MLOAD",
+      "path": "86"
+    },
+    "427": {
+      "branch": 11,
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2250
+      ],
+      "op": "GT",
+      "path": "86"
+    },
+    "428": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2263
+      ],
+      "op": "DUP1",
+      "path": "86"
+    },
+    "429": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2263
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x1B3"
+    },
+    "432": {
+      "branch": 11,
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2263
+      ],
+      "op": "JUMPI",
+      "path": "86"
+    },
+    "433": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2263
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "434": {
+      "branch": 12,
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2254,
+        2263
+      ],
+      "op": "DUP1",
+      "path": "86"
+    },
+    "435": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2235,
+        2263
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "436": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2231,
+        2343
+      ],
+      "op": "ISZERO",
+      "path": "86"
+    },
+    "437": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2231,
+        2343
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x1C4"
+    },
+    "440": {
+      "branch": 12,
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2231,
+        2343
+      ],
+      "op": "JUMPI",
+      "path": "86"
+    },
+    "441": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2279,
+        2332
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "statement": 6,
+      "value": "0x1C2"
+    },
+    "444": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2308,
+        2325
+      ],
+      "op": "DUP4",
+      "path": "86"
+    },
+    "445": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2327,
+        2331
+      ],
+      "op": "DUP4",
+      "path": "86"
+    },
+    "446": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2279,
+        2307
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x209"
+    },
+    "449": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "jump": "i",
+      "offset": [
+        2279,
+        2332
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "450": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2279,
+        2332
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "451": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2279,
+        2332
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "452": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2231,
+        2343
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "453": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2054,
+        2349
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "454": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2054,
+        2349
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "455": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "offset": [
+        2054,
+        2349
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "456": {
+      "fn": "ERC1967Upgrade._upgradeToAndCall",
+      "jump": "o",
+      "offset": [
+        2054,
+        2349
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "457": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1768,
+        1920
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "458": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1834,
+        1871
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "statement": 7,
+      "value": "0x1D2"
+    },
+    "461": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1853,
+        1870
+      ],
+      "op": "DUP2",
+      "path": "86"
+    },
+    "462": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1834,
+        1852
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x235"
+    },
+    "465": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "jump": "i",
+      "offset": [
+        1834,
+        1871
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "466": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1834,
+        1871
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "467": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "PUSH1",
+      "path": "86",
+      "statement": 8,
+      "value": "0x40"
+    },
+    "469": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "MLOAD",
+      "path": "86"
+    },
+    "470": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "472": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "474": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "476": {
+      "op": "SHL"
+    },
+    "477": {
+      "op": "SUB"
+    },
+    "478": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "DUP3",
+      "path": "86"
+    },
+    "479": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "AND",
+      "path": "86"
+    },
+    "480": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "481": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "PUSH32",
+      "path": "86",
+      "value": "0xBC7CD75A20EE27FD9ADEBAB32041F755214DBC6BFFA90CC0225B39DA2E5C2D3B"
+    },
+    "514": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "515": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "PUSH1",
+      "path": "86",
+      "value": "0x0"
+    },
+    "517": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "518": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1886,
+        1913
+      ],
+      "op": "LOG2",
+      "path": "86"
+    },
+    "519": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "offset": [
+        1768,
+        1920
+      ],
+      "op": "POP",
+      "path": "86"
+    },
+    "520": {
+      "fn": "ERC1967Upgrade._upgradeTo",
+      "jump": "o",
+      "offset": [
+        1768,
+        1920
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "521": {
+      "op": "JUMPDEST"
+    },
+    "522": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "524": {
+      "op": "PUSH2",
+      "value": "0x22E"
+    },
+    "527": {
+      "op": "DUP4"
+    },
+    "528": {
+      "op": "DUP4"
+    },
+    "529": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "531": {
+      "op": "MLOAD"
+    },
+    "532": {
+      "op": "DUP1"
+    },
+    "533": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "535": {
+      "op": "ADD"
+    },
+    "536": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "538": {
+      "op": "MSTORE"
+    },
+    "539": {
+      "op": "DUP1"
+    },
+    "540": {
+      "op": "PUSH1",
+      "value": "0x27"
+    },
+    "542": {
+      "op": "DUP2"
+    },
+    "543": {
+      "op": "MSTORE"
+    },
+    "544": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "546": {
+      "op": "ADD"
+    },
+    "547": {
+      "op": "PUSH2",
+      "value": "0x572"
+    },
+    "550": {
+      "op": "PUSH1",
+      "value": "0x27"
+    },
+    "552": {
+      "op": "SWAP2"
+    },
+    "553": {
+      "op": "CODECOPY"
+    },
+    "554": {
+      "op": "PUSH2",
+      "value": "0x2DA"
+    },
+    "557": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "558": {
+      "op": "JUMPDEST"
+    },
+    "559": {
+      "op": "SWAP4"
+    },
+    "560": {
+      "op": "SWAP3"
+    },
+    "561": {
+      "op": "POP"
+    },
+    "562": {
+      "op": "POP"
+    },
+    "563": {
+      "op": "POP"
+    },
+    "564": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "565": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1403,
+        1662
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "566": {
+      "op": "DUP1"
+    },
+    "567": {
+      "op": "EXTCODESIZE"
+    },
+    "568": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "statement": 9,
+      "value": "0x299"
+    },
+    "571": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "JUMPI",
+      "path": "86"
+    },
+    "572": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "PUSH1",
+      "path": "86",
+      "value": "0x40"
+    },
+    "574": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "MLOAD",
+      "path": "86"
+    },
+    "575": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "579": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "581": {
+      "op": "SHL"
+    },
+    "582": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "DUP2",
+      "path": "86"
+    },
+    "583": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "MSTORE",
+      "path": "86"
+    },
+    "584": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "586": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "PUSH1",
+      "path": "86",
+      "value": "0x4"
+    },
+    "588": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "DUP3",
+      "path": "86"
+    },
+    "589": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "ADD",
+      "path": "86"
+    },
+    "590": {
+      "op": "MSTORE"
+    },
+    "591": {
+      "op": "PUSH1",
+      "value": "0x2D"
+    },
+    "593": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "595": {
+      "op": "DUP3"
+    },
+    "596": {
+      "op": "ADD"
+    },
+    "597": {
+      "op": "MSTORE"
+    },
+    "598": {
+      "op": "PUSH32",
+      "value": "0x455243313936373A206E657720696D706C656D656E746174696F6E206973206E"
+    },
+    "631": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "633": {
+      "op": "DUP3"
+    },
+    "634": {
+      "op": "ADD"
+    },
+    "635": {
+      "op": "MSTORE"
+    },
+    "636": {
+      "op": "PUSH13",
+      "value": "0x1BDD08184818DBDB9D1C9858DD"
+    },
+    "650": {
+      "op": "PUSH1",
+      "value": "0x9A"
+    },
+    "652": {
+      "op": "SHL"
+    },
+    "653": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "655": {
+      "op": "DUP3"
+    },
+    "656": {
+      "op": "ADD"
+    },
+    "657": {
+      "op": "MSTORE"
+    },
+    "658": {
+      "op": "PUSH1",
+      "value": "0x84"
+    },
+    "660": {
+      "op": "ADD"
+    },
+    "661": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "PUSH2",
+      "path": "86",
+      "value": "0x18C"
+    },
+    "664": {
+      "op": "JUMP"
+    },
+    "665": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1476,
+        1571
+      ],
+      "op": "JUMPDEST",
+      "path": "86"
+    },
+    "666": {
+      "offset": [
+        901,
+        967
+      ],
+      "op": "PUSH32",
+      "path": "86",
+      "value": "0x360894A13BA1A3210667C828492DB98DCA3E2076CC3735A920A3CA505D382BBC"
+    },
+    "699": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "DUP1",
+      "path": "86",
+      "statement": 10
+    },
+    "700": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SLOAD",
+      "path": "86"
+    },
+    "701": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "703": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "705": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "707": {
+      "op": "SHL"
+    },
+    "708": {
+      "op": "SUB"
+    },
+    "709": {
+      "op": "NOT"
+    },
+    "710": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "AND",
+      "path": "86"
+    },
+    "711": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "713": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "715": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "717": {
+      "op": "SHL"
+    },
+    "718": {
+      "op": "SUB"
+    },
+    "719": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP3",
+      "path": "86"
+    },
+    "720": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "721": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP3",
+      "path": "86"
+    },
+    "722": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "AND",
+      "path": "86"
+    },
+    "723": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP2",
+      "path": "86"
+    },
+    "724": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "725": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP2",
+      "path": "86"
+    },
+    "726": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "OR",
+      "path": "86"
+    },
+    "727": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SWAP1",
+      "path": "86"
+    },
+    "728": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "offset": [
+        1581,
+        1655
+      ],
+      "op": "SSTORE",
+      "path": "86"
+    },
+    "729": {
+      "fn": "ERC1967Upgrade._setImplementation",
+      "jump": "o",
+      "offset": [
+        1403,
+        1662
+      ],
+      "op": "JUMP",
+      "path": "86"
+    },
+    "730": {
+      "op": "JUMPDEST"
+    },
+    "731": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "733": {
+      "op": "DUP4"
+    },
+    "734": {
+      "op": "EXTCODESIZE"
+    },
+    "735": {
+      "op": "PUSH2",
+      "value": "0x339"
+    },
+    "738": {
+      "op": "JUMPI"
+    },
+    "739": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "741": {
+      "op": "MLOAD"
+    },
+    "742": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "746": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "748": {
+      "op": "SHL"
+    },
+    "749": {
+      "op": "DUP2"
+    },
+    "750": {
+      "op": "MSTORE"
+    },
+    "751": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "753": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "755": {
+      "op": "DUP3"
+    },
+    "756": {
+      "op": "ADD"
+    },
+    "757": {
+      "op": "MSTORE"
+    },
+    "758": {
+      "op": "PUSH1",
+      "value": "0x26"
+    },
+    "760": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "762": {
+      "op": "DUP3"
+    },
+    "763": {
+      "op": "ADD"
+    },
+    "764": {
+      "op": "MSTORE"
+    },
+    "765": {
+      "op": "PUSH32",
+      "value": "0x416464726573733A2064656C65676174652063616C6C20746F206E6F6E2D636F"
+    },
+    "798": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "800": {
+      "op": "DUP3"
+    },
+    "801": {
+      "op": "ADD"
+    },
+    "802": {
+      "op": "MSTORE"
+    },
+    "803": {
+      "op": "PUSH6",
+      "value": "0x1B9D1C9858DD"
+    },
+    "810": {
+      "op": "PUSH1",
+      "value": "0xD2"
+    },
+    "812": {
+      "op": "SHL"
+    },
+    "813": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "815": {
+      "op": "DUP3"
+    },
+    "816": {
+      "op": "ADD"
+    },
+    "817": {
+      "op": "MSTORE"
+    },
+    "818": {
+      "op": "PUSH1",
+      "value": "0x84"
+    },
+    "820": {
+      "op": "ADD"
+    },
+    "821": {
+      "op": "PUSH2",
+      "value": "0x18C"
+    },
+    "824": {
+      "op": "JUMP"
+    },
+    "825": {
+      "op": "JUMPDEST"
+    },
+    "826": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "828": {
+      "op": "DUP1"
+    },
+    "829": {
+      "op": "DUP6"
+    },
+    "830": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "832": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "834": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "836": {
+      "op": "SHL"
+    },
+    "837": {
+      "op": "SUB"
+    },
+    "838": {
+      "op": "AND"
+    },
+    "839": {
+      "op": "DUP6"
+    },
+    "840": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "842": {
+      "op": "MLOAD"
+    },
+    "843": {
+      "op": "PUSH2",
+      "value": "0x354"
+    },
+    "846": {
+      "op": "SWAP2"
+    },
+    "847": {
+      "op": "SWAP1"
+    },
+    "848": {
+      "op": "PUSH2",
+      "value": "0x522"
+    },
+    "851": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "852": {
+      "op": "JUMPDEST"
+    },
+    "853": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "855": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "857": {
+      "op": "MLOAD"
+    },
+    "858": {
+      "op": "DUP1"
+    },
+    "859": {
+      "op": "DUP4"
+    },
+    "860": {
+      "op": "SUB"
+    },
+    "861": {
+      "op": "DUP2"
+    },
+    "862": {
+      "op": "DUP6"
+    },
+    "863": {
+      "op": "GAS"
+    },
+    "864": {
+      "op": "DELEGATECALL"
+    },
+    "865": {
+      "op": "SWAP2"
+    },
+    "866": {
+      "op": "POP"
+    },
+    "867": {
+      "op": "POP"
+    },
+    "868": {
+      "op": "RETURNDATASIZE"
+    },
+    "869": {
+      "op": "DUP1"
+    },
+    "870": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "872": {
+      "op": "DUP2"
+    },
+    "873": {
+      "op": "EQ"
+    },
+    "874": {
+      "op": "PUSH2",
+      "value": "0x38F"
+    },
+    "877": {
+      "op": "JUMPI"
+    },
+    "878": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "880": {
+      "op": "MLOAD"
+    },
+    "881": {
+      "op": "SWAP2"
+    },
+    "882": {
+      "op": "POP"
+    },
+    "883": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "885": {
+      "op": "NOT"
+    },
+    "886": {
+      "op": "PUSH1",
+      "value": "0x3F"
+    },
+    "888": {
+      "op": "RETURNDATASIZE"
+    },
+    "889": {
+      "op": "ADD"
+    },
+    "890": {
+      "op": "AND"
+    },
+    "891": {
+      "op": "DUP3"
+    },
+    "892": {
+      "op": "ADD"
+    },
+    "893": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "895": {
+      "op": "MSTORE"
+    },
+    "896": {
+      "op": "RETURNDATASIZE"
+    },
+    "897": {
+      "op": "DUP3"
+    },
+    "898": {
+      "op": "MSTORE"
+    },
+    "899": {
+      "op": "RETURNDATASIZE"
+    },
+    "900": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "902": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "904": {
+      "op": "DUP5"
+    },
+    "905": {
+      "op": "ADD"
+    },
+    "906": {
+      "op": "RETURNDATACOPY"
+    },
+    "907": {
+      "op": "PUSH2",
+      "value": "0x394"
+    },
+    "910": {
+      "op": "JUMP"
+    },
+    "911": {
+      "op": "JUMPDEST"
+    },
+    "912": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "914": {
+      "op": "SWAP2"
+    },
+    "915": {
+      "op": "POP"
+    },
+    "916": {
+      "op": "JUMPDEST"
+    },
+    "917": {
+      "op": "POP"
+    },
+    "918": {
+      "op": "SWAP2"
+    },
+    "919": {
+      "op": "POP"
+    },
+    "920": {
+      "op": "SWAP2"
+    },
+    "921": {
+      "op": "POP"
+    },
+    "922": {
+      "op": "PUSH2",
+      "value": "0x3A4"
+    },
+    "925": {
+      "op": "DUP3"
+    },
+    "926": {
+      "op": "DUP3"
+    },
+    "927": {
+      "op": "DUP7"
+    },
+    "928": {
+      "op": "PUSH2",
+      "value": "0x3AE"
+    },
+    "931": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "932": {
+      "op": "JUMPDEST"
+    },
+    "933": {
+      "op": "SWAP7"
+    },
+    "934": {
+      "op": "SWAP6"
+    },
+    "935": {
+      "op": "POP"
+    },
+    "936": {
+      "op": "POP"
+    },
+    "937": {
+      "op": "POP"
+    },
+    "938": {
+      "op": "POP"
+    },
+    "939": {
+      "op": "POP"
+    },
+    "940": {
+      "op": "POP"
+    },
+    "941": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "942": {
+      "op": "JUMPDEST"
+    },
+    "943": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "945": {
+      "op": "DUP4"
+    },
+    "946": {
+      "op": "ISZERO"
+    },
+    "947": {
+      "op": "PUSH2",
+      "value": "0x3BD"
+    },
+    "950": {
+      "op": "JUMPI"
+    },
+    "951": {
+      "op": "POP"
+    },
+    "952": {
+      "op": "DUP2"
+    },
+    "953": {
+      "op": "PUSH2",
+      "value": "0x22E"
+    },
+    "956": {
+      "op": "JUMP"
+    },
+    "957": {
+      "op": "JUMPDEST"
+    },
+    "958": {
+      "op": "DUP3"
+    },
+    "959": {
+      "op": "MLOAD"
+    },
+    "960": {
+      "op": "ISZERO"
+    },
+    "961": {
+      "op": "PUSH2",
+      "value": "0x3CD"
+    },
+    "964": {
+      "op": "JUMPI"
+    },
+    "965": {
+      "op": "DUP3"
+    },
+    "966": {
+      "op": "MLOAD"
+    },
+    "967": {
+      "op": "DUP1"
+    },
+    "968": {
+      "op": "DUP5"
+    },
+    "969": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "971": {
+      "op": "ADD"
+    },
+    "972": {
+      "op": "REVERT"
+    },
+    "973": {
+      "op": "JUMPDEST"
+    },
+    "974": {
+      "op": "DUP2"
+    },
+    "975": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "977": {
+      "op": "MLOAD"
+    },
+    "978": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "982": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "984": {
+      "op": "SHL"
+    },
+    "985": {
+      "op": "DUP2"
+    },
+    "986": {
+      "op": "MSTORE"
+    },
+    "987": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "989": {
+      "op": "ADD"
+    },
+    "990": {
+      "op": "PUSH2",
+      "value": "0x18C"
+    },
+    "993": {
+      "op": "SWAP2"
+    },
+    "994": {
+      "op": "SWAP1"
+    },
+    "995": {
+      "op": "PUSH2",
+      "value": "0x53E"
+    },
+    "998": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "999": {
+      "op": "JUMPDEST"
+    },
+    "1000": {
+      "op": "DUP1"
+    },
+    "1001": {
+      "op": "CALLDATALOAD"
+    },
+    "1002": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1004": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1006": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "1008": {
+      "op": "SHL"
+    },
+    "1009": {
+      "op": "SUB"
+    },
+    "1010": {
+      "op": "DUP2"
+    },
+    "1011": {
+      "op": "AND"
+    },
+    "1012": {
+      "op": "DUP2"
+    },
+    "1013": {
+      "op": "EQ"
+    },
+    "1014": {
+      "op": "PUSH2",
+      "value": "0x3FE"
+    },
+    "1017": {
+      "op": "JUMPI"
+    },
+    "1018": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1020": {
+      "op": "DUP1"
+    },
+    "1021": {
+      "op": "REVERT"
+    },
+    "1022": {
+      "op": "JUMPDEST"
+    },
+    "1023": {
+      "op": "SWAP2"
+    },
+    "1024": {
+      "op": "SWAP1"
+    },
+    "1025": {
+      "op": "POP"
+    },
+    "1026": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1027": {
+      "op": "JUMPDEST"
+    },
+    "1028": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1030": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1032": {
+      "op": "DUP3"
+    },
+    "1033": {
+      "op": "DUP5"
+    },
+    "1034": {
+      "op": "SUB"
+    },
+    "1035": {
+      "op": "SLT"
+    },
+    "1036": {
+      "op": "ISZERO"
+    },
+    "1037": {
+      "op": "PUSH2",
+      "value": "0x415"
+    },
+    "1040": {
+      "op": "JUMPI"
+    },
+    "1041": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1043": {
+      "op": "DUP1"
+    },
+    "1044": {
+      "op": "REVERT"
+    },
+    "1045": {
+      "op": "JUMPDEST"
+    },
+    "1046": {
+      "op": "PUSH2",
+      "value": "0x22E"
+    },
+    "1049": {
+      "op": "DUP3"
+    },
+    "1050": {
+      "op": "PUSH2",
+      "value": "0x3E7"
+    },
+    "1053": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1054": {
+      "op": "JUMPDEST"
+    },
+    "1055": {
+      "op": "PUSH4",
+      "value": "0x4E487B71"
+    },
+    "1060": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "1062": {
+      "op": "SHL"
+    },
+    "1063": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1065": {
+      "op": "MSTORE"
+    },
+    "1066": {
+      "op": "PUSH1",
+      "value": "0x41"
+    },
+    "1068": {
+      "op": "PUSH1",
+      "value": "0x4"
+    },
+    "1070": {
+      "op": "MSTORE"
+    },
+    "1071": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "1073": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1075": {
+      "op": "REVERT"
+    },
+    "1076": {
+      "op": "JUMPDEST"
+    },
+    "1077": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1079": {
+      "op": "DUP1"
+    },
+    "1080": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1082": {
+      "op": "DUP4"
+    },
+    "1083": {
+      "op": "DUP6"
+    },
+    "1084": {
+      "op": "SUB"
+    },
+    "1085": {
+      "op": "SLT"
+    },
+    "1086": {
+      "op": "ISZERO"
+    },
+    "1087": {
+      "op": "PUSH2",
+      "value": "0x447"
+    },
+    "1090": {
+      "op": "JUMPI"
+    },
+    "1091": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1093": {
+      "op": "DUP1"
+    },
+    "1094": {
+      "op": "REVERT"
+    },
+    "1095": {
+      "op": "JUMPDEST"
+    },
+    "1096": {
+      "op": "PUSH2",
+      "value": "0x450"
+    },
+    "1099": {
+      "op": "DUP4"
+    },
+    "1100": {
+      "op": "PUSH2",
+      "value": "0x3E7"
+    },
+    "1103": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1104": {
+      "op": "JUMPDEST"
+    },
+    "1105": {
+      "op": "SWAP2"
+    },
+    "1106": {
+      "op": "POP"
+    },
+    "1107": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1109": {
+      "op": "DUP4"
+    },
+    "1110": {
+      "op": "ADD"
+    },
+    "1111": {
+      "op": "CALLDATALOAD"
+    },
+    "1112": {
+      "op": "PUSH8",
+      "value": "0xFFFFFFFFFFFFFFFF"
+    },
+    "1121": {
+      "op": "DUP1"
+    },
+    "1122": {
+      "op": "DUP3"
+    },
+    "1123": {
+      "op": "GT"
+    },
+    "1124": {
+      "op": "ISZERO"
+    },
+    "1125": {
+      "op": "PUSH2",
+      "value": "0x46D"
+    },
+    "1128": {
+      "op": "JUMPI"
+    },
+    "1129": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1131": {
+      "op": "DUP1"
+    },
+    "1132": {
+      "op": "REVERT"
+    },
+    "1133": {
+      "op": "JUMPDEST"
+    },
+    "1134": {
+      "op": "DUP2"
+    },
+    "1135": {
+      "op": "DUP6"
+    },
+    "1136": {
+      "op": "ADD"
+    },
+    "1137": {
+      "op": "SWAP2"
+    },
+    "1138": {
+      "op": "POP"
+    },
+    "1139": {
+      "op": "DUP6"
+    },
+    "1140": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1142": {
+      "op": "DUP4"
+    },
+    "1143": {
+      "op": "ADD"
+    },
+    "1144": {
+      "op": "SLT"
+    },
+    "1145": {
+      "op": "PUSH2",
+      "value": "0x481"
+    },
+    "1148": {
+      "op": "JUMPI"
+    },
+    "1149": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1151": {
+      "op": "DUP1"
+    },
+    "1152": {
+      "op": "REVERT"
+    },
+    "1153": {
+      "op": "JUMPDEST"
+    },
+    "1154": {
+      "op": "DUP2"
+    },
+    "1155": {
+      "op": "CALLDATALOAD"
+    },
+    "1156": {
+      "op": "DUP2"
+    },
+    "1157": {
+      "op": "DUP2"
+    },
+    "1158": {
+      "op": "GT"
+    },
+    "1159": {
+      "op": "ISZERO"
+    },
+    "1160": {
+      "op": "PUSH2",
+      "value": "0x493"
+    },
+    "1163": {
+      "op": "JUMPI"
+    },
+    "1164": {
+      "op": "PUSH2",
+      "value": "0x493"
+    },
+    "1167": {
+      "op": "PUSH2",
+      "value": "0x41E"
+    },
+    "1170": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1171": {
+      "op": "JUMPDEST"
+    },
+    "1172": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1174": {
+      "op": "MLOAD"
+    },
+    "1175": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1177": {
+      "op": "DUP3"
+    },
+    "1178": {
+      "op": "ADD"
+    },
+    "1179": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1181": {
+      "op": "NOT"
+    },
+    "1182": {
+      "op": "SWAP1"
+    },
+    "1183": {
+      "op": "DUP2"
+    },
+    "1184": {
+      "op": "AND"
+    },
+    "1185": {
+      "op": "PUSH1",
+      "value": "0x3F"
+    },
+    "1187": {
+      "op": "ADD"
+    },
+    "1188": {
+      "op": "AND"
+    },
+    "1189": {
+      "op": "DUP2"
+    },
+    "1190": {
+      "op": "ADD"
+    },
+    "1191": {
+      "op": "SWAP1"
+    },
+    "1192": {
+      "op": "DUP4"
+    },
+    "1193": {
+      "op": "DUP3"
+    },
+    "1194": {
+      "op": "GT"
+    },
+    "1195": {
+      "op": "DUP2"
+    },
+    "1196": {
+      "op": "DUP4"
+    },
+    "1197": {
+      "op": "LT"
+    },
+    "1198": {
+      "op": "OR"
+    },
+    "1199": {
+      "op": "ISZERO"
+    },
+    "1200": {
+      "op": "PUSH2",
+      "value": "0x4BB"
+    },
+    "1203": {
+      "op": "JUMPI"
+    },
+    "1204": {
+      "op": "PUSH2",
+      "value": "0x4BB"
+    },
+    "1207": {
+      "op": "PUSH2",
+      "value": "0x41E"
+    },
+    "1210": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1211": {
+      "op": "JUMPDEST"
+    },
+    "1212": {
+      "op": "DUP2"
+    },
+    "1213": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1215": {
+      "op": "MSTORE"
+    },
+    "1216": {
+      "op": "DUP3"
+    },
+    "1217": {
+      "op": "DUP2"
+    },
+    "1218": {
+      "op": "MSTORE"
+    },
+    "1219": {
+      "op": "DUP9"
+    },
+    "1220": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1222": {
+      "op": "DUP5"
+    },
+    "1223": {
+      "op": "DUP8"
+    },
+    "1224": {
+      "op": "ADD"
+    },
+    "1225": {
+      "op": "ADD"
+    },
+    "1226": {
+      "op": "GT"
+    },
+    "1227": {
+      "op": "ISZERO"
+    },
+    "1228": {
+      "op": "PUSH2",
+      "value": "0x4D4"
+    },
+    "1231": {
+      "op": "JUMPI"
+    },
+    "1232": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1234": {
+      "op": "DUP1"
+    },
+    "1235": {
+      "op": "REVERT"
+    },
+    "1236": {
+      "op": "JUMPDEST"
+    },
+    "1237": {
+      "op": "DUP3"
+    },
+    "1238": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1240": {
+      "op": "DUP7"
+    },
+    "1241": {
+      "op": "ADD"
+    },
+    "1242": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1244": {
+      "op": "DUP4"
+    },
+    "1245": {
+      "op": "ADD"
+    },
+    "1246": {
+      "op": "CALLDATACOPY"
+    },
+    "1247": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1249": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1251": {
+      "op": "DUP5"
+    },
+    "1252": {
+      "op": "DUP4"
+    },
+    "1253": {
+      "op": "ADD"
+    },
+    "1254": {
+      "op": "ADD"
+    },
+    "1255": {
+      "op": "MSTORE"
+    },
+    "1256": {
+      "op": "DUP1"
+    },
+    "1257": {
+      "op": "SWAP6"
+    },
+    "1258": {
+      "op": "POP"
+    },
+    "1259": {
+      "op": "POP"
+    },
+    "1260": {
+      "op": "POP"
+    },
+    "1261": {
+      "op": "POP"
+    },
+    "1262": {
+      "op": "POP"
+    },
+    "1263": {
+      "op": "POP"
+    },
+    "1264": {
+      "op": "SWAP3"
+    },
+    "1265": {
+      "op": "POP"
+    },
+    "1266": {
+      "op": "SWAP3"
+    },
+    "1267": {
+      "op": "SWAP1"
+    },
+    "1268": {
+      "op": "POP"
+    },
+    "1269": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1270": {
+      "op": "JUMPDEST"
+    },
+    "1271": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1273": {
+      "op": "JUMPDEST"
+    },
+    "1274": {
+      "op": "DUP4"
+    },
+    "1275": {
+      "op": "DUP2"
+    },
+    "1276": {
+      "op": "LT"
+    },
+    "1277": {
+      "op": "ISZERO"
+    },
+    "1278": {
+      "op": "PUSH2",
+      "value": "0x511"
+    },
+    "1281": {
+      "op": "JUMPI"
+    },
+    "1282": {
+      "op": "DUP2"
+    },
+    "1283": {
+      "op": "DUP2"
+    },
+    "1284": {
+      "op": "ADD"
+    },
+    "1285": {
+      "op": "MLOAD"
+    },
+    "1286": {
+      "op": "DUP4"
+    },
+    "1287": {
+      "op": "DUP3"
+    },
+    "1288": {
+      "op": "ADD"
+    },
+    "1289": {
+      "op": "MSTORE"
+    },
+    "1290": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1292": {
+      "op": "ADD"
+    },
+    "1293": {
+      "op": "PUSH2",
+      "value": "0x4F9"
+    },
+    "1296": {
+      "op": "JUMP"
+    },
+    "1297": {
+      "op": "JUMPDEST"
+    },
+    "1298": {
+      "op": "DUP4"
+    },
+    "1299": {
+      "op": "DUP2"
+    },
+    "1300": {
+      "op": "GT"
+    },
+    "1301": {
+      "op": "ISZERO"
+    },
+    "1302": {
+      "op": "PUSH2",
+      "value": "0x1C2"
+    },
+    "1305": {
+      "op": "JUMPI"
+    },
+    "1306": {
+      "op": "POP"
+    },
+    "1307": {
+      "op": "POP"
+    },
+    "1308": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1310": {
+      "op": "SWAP2"
+    },
+    "1311": {
+      "op": "ADD"
+    },
+    "1312": {
+      "op": "MSTORE"
+    },
+    "1313": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1314": {
+      "op": "JUMPDEST"
+    },
+    "1315": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1317": {
+      "op": "DUP3"
+    },
+    "1318": {
+      "op": "MLOAD"
+    },
+    "1319": {
+      "op": "PUSH2",
+      "value": "0x534"
+    },
+    "1322": {
+      "op": "DUP2"
+    },
+    "1323": {
+      "op": "DUP5"
+    },
+    "1324": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1326": {
+      "op": "DUP8"
+    },
+    "1327": {
+      "op": "ADD"
+    },
+    "1328": {
+      "op": "PUSH2",
+      "value": "0x4F6"
+    },
+    "1331": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1332": {
+      "op": "JUMPDEST"
+    },
+    "1333": {
+      "op": "SWAP2"
+    },
+    "1334": {
+      "op": "SWAP1"
+    },
+    "1335": {
+      "op": "SWAP2"
+    },
+    "1336": {
+      "op": "ADD"
+    },
+    "1337": {
+      "op": "SWAP3"
+    },
+    "1338": {
+      "op": "SWAP2"
+    },
+    "1339": {
+      "op": "POP"
+    },
+    "1340": {
+      "op": "POP"
+    },
+    "1341": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "1342": {
+      "op": "JUMPDEST"
+    },
+    "1343": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1345": {
+      "op": "DUP2"
+    },
+    "1346": {
+      "op": "MSTORE"
+    },
+    "1347": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1349": {
+      "op": "DUP3"
+    },
+    "1350": {
+      "op": "MLOAD"
+    },
+    "1351": {
+      "op": "DUP1"
+    },
+    "1352": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1354": {
+      "op": "DUP5"
+    },
+    "1355": {
+      "op": "ADD"
+    },
+    "1356": {
+      "op": "MSTORE"
+    },
+    "1357": {
+      "op": "PUSH2",
+      "value": "0x55D"
+    },
+    "1360": {
+      "op": "DUP2"
+    },
+    "1361": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1363": {
+      "op": "DUP6"
+    },
+    "1364": {
+      "op": "ADD"
+    },
+    "1365": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1367": {
+      "op": "DUP8"
+    },
+    "1368": {
+      "op": "ADD"
+    },
+    "1369": {
+      "op": "PUSH2",
+      "value": "0x4F6"
+    },
+    "1372": {
+      "jump": "i",
+      "op": "JUMP"
+    },
+    "1373": {
+      "op": "JUMPDEST"
+    },
+    "1374": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1376": {
+      "op": "ADD"
+    },
+    "1377": {
+      "op": "PUSH1",
+      "value": "0x1F"
+    },
+    "1379": {
+      "op": "NOT"
+    },
+    "1380": {
+      "op": "AND"
+    },
+    "1381": {
+      "op": "SWAP2"
+    },
+    "1382": {
+      "op": "SWAP1"
+    },
+    "1383": {
+      "op": "SWAP2"
+    },
+    "1384": {
+      "op": "ADD"
+    },
+    "1385": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "1387": {
+      "op": "ADD"
+    },
+    "1388": {
+      "op": "SWAP3"
+    },
+    "1389": {
+      "op": "SWAP2"
+    },
+    "1390": {
+      "op": "POP"
+    },
+    "1391": {
+      "op": "POP"
+    },
+    "1392": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "c8a10b888a9c5a23274c596fd65f2208cf3de150",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"../CountersImpl.sol\";\nimport \"../../proxy/utils/UUPSUpgradeable.sol\";\n\ncontract UUPSUpgradeableMock is CountersImpl, UUPSUpgradeable {\n    // Not having any checks in this function is dangerous! Do not do this outside tests!\n    function _authorizeUpgrade(address) internal virtual override {}\n}\n\ncontract UUPSUpgradeableUnsafeMock is UUPSUpgradeableMock {\n    function upgradeTo(address newImplementation) external virtual override {\n        ERC1967Upgrade._upgradeToAndCall(newImplementation, bytes(\"\"), false);\n    }\n\n    function upgradeToAndCall(address newImplementation, bytes memory data) external payable virtual override {\n        ERC1967Upgrade._upgradeToAndCall(newImplementation, data, false);\n    }\n}\n\ncontract UUPSUpgradeableBrokenMock is UUPSUpgradeableMock {\n    function upgradeTo(address) external virtual override {\n        // pass\n    }\n\n    function upgradeToAndCall(address, bytes memory) external payable virtual override {\n        // pass\n    }\n}\n",
+  "sourceMap": "363:417:83:-:0;;;;;;;;;;;;;;;;;;;",
+  "sourcePath": "contracts/openzeppelin/contracts/mocks/UUPS/TestInProd.sol",
+  "type": "contract"
+}

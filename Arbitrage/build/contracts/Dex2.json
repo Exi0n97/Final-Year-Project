@@ -1,0 +1,3927 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "ethtoken",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "usdtoken",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "eth",
+      "outputs": [
+        {
+          "internalType": "contract etherToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "tradeEth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "tradeUSD",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "usd",
+      "outputs": [
+        {
+          "internalType": "contract usdToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "allSourcePaths": {
+    "1": "contracts/dex2.sol",
+    "2": "contracts/eth.sol",
+    "8": "contracts/openzeppelin/contracts/utils/math/SafeMath.sol",
+    "9": "contracts/usd.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/dex2.sol",
+    "exportedSymbols": {
+      "Context": [
+        1448
+      ],
+      "Dex2": [
+        352
+      ],
+      "ERC20": [
+        955
+      ],
+      "IERC20": [
+        1033
+      ],
+      "IERC20Metadata": [
+        1427
+      ],
+      "SafeMath": [
+        1402
+      ],
+      "etherToken": [
+        409
+      ],
+      "usdToken": [
+        1090
+      ]
+    },
+    "id": 353,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 255,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "contracts/openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "./openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 256,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 353,
+        "sourceUnit": 1034,
+        "src": "25:57:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "file": "./openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "id": 257,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 353,
+        "sourceUnit": 956,
+        "src": "83:56:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/openzeppelin/contracts/utils/math/SafeMath.sol",
+        "file": "./openzeppelin/contracts/utils/math/SafeMath.sol",
+        "id": 258,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 353,
+        "sourceUnit": 1403,
+        "src": "140:58:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/eth.sol",
+        "file": "./eth.sol",
+        "id": 259,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 353,
+        "sourceUnit": 410,
+        "src": "199:19:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/usd.sol",
+        "file": "./usd.sol",
+        "id": 260,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 353,
+        "sourceUnit": 1091,
+        "src": "219:19:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Dex2",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 352,
+        "linearizedBaseContracts": [
+          352
+        ],
+        "name": "Dex2",
+        "nameLocation": "249:4:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 263,
+            "libraryName": {
+              "id": 261,
+              "name": "SafeMath",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1402,
+              "src": "261:8:1"
+            },
+            "nodeType": "UsingForDirective",
+            "src": "255:27:1",
+            "typeName": {
+              "id": 262,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "274:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            }
+          },
+          {
+            "constant": false,
+            "functionSelector": "8c7c9e0c",
+            "id": 266,
+            "mutability": "mutable",
+            "name": "eth",
+            "nameLocation": "302:3:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 352,
+            "src": "284:21:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_etherToken_$409",
+              "typeString": "contract etherToken"
+            },
+            "typeName": {
+              "id": 265,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 264,
+                "name": "etherToken",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 409,
+                "src": "284:10:1"
+              },
+              "referencedDeclaration": 409,
+              "src": "284:10:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_etherToken_$409",
+                "typeString": "contract etherToken"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "functionSelector": "d63a6ccd",
+            "id": 269,
+            "mutability": "mutable",
+            "name": "usd",
+            "nameLocation": "324:3:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 352,
+            "src": "308:19:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_usdToken_$1090",
+              "typeString": "contract usdToken"
+            },
+            "typeName": {
+              "id": 268,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 267,
+                "name": "usdToken",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1090,
+                "src": "308:8:1"
+              },
+              "referencedDeclaration": 1090,
+              "src": "308:8:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_usdToken_$1090",
+                "typeString": "contract usdToken"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 308,
+              "nodeType": "Block",
+              "src": "400:135:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 280,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 276,
+                      "name": "eth",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 266,
+                      "src": "407:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_etherToken_$409",
+                        "typeString": "contract etherToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 278,
+                          "name": "ethtoken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 271,
+                          "src": "422:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        ],
+                        "id": 277,
+                        "name": "etherToken",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 409,
+                        "src": "411:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_etherToken_$409_$",
+                          "typeString": "type(contract etherToken)"
+                        }
+                      },
+                      "id": 279,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "411:20:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_etherToken_$409",
+                        "typeString": "contract etherToken"
+                      }
+                    },
+                    "src": "407:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_etherToken_$409",
+                      "typeString": "contract etherToken"
+                    }
+                  },
+                  "id": 281,
+                  "nodeType": "ExpressionStatement",
+                  "src": "407:24:1"
+                },
+                {
+                  "expression": {
+                    "id": 286,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 282,
+                      "name": "usd",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 269,
+                      "src": "437:3:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_usdToken_$1090",
+                        "typeString": "contract usdToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 284,
+                          "name": "usdtoken",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 273,
+                          "src": "450:8:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        ],
+                        "id": 283,
+                        "name": "usdToken",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1090,
+                        "src": "441:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_usdToken_$1090_$",
+                          "typeString": "type(contract usdToken)"
+                        }
+                      },
+                      "id": 285,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "441:18:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_usdToken_$1090",
+                        "typeString": "contract usdToken"
+                      }
+                    },
+                    "src": "437:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_usdToken_$1090",
+                      "typeString": "contract usdToken"
+                    }
+                  },
+                  "id": 287,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:22:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 293,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "482:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          ],
+                          "id": 292,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "474:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 291,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "474:7:1",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 294,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "474:13:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "hexValue": "313030303030",
+                        "id": 295,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "488:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_100000_by_1",
+                          "typeString": "int_const 100000"
+                        },
+                        "value": "100000"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_100000_by_1",
+                          "typeString": "int_const 100000"
+                        }
+                      ],
+                      "expression": {
+                        "id": 288,
+                        "name": "eth",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 266,
+                        "src": "465:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_etherToken_$409",
+                          "typeString": "contract etherToken"
+                        }
+                      },
+                      "id": 290,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "mint",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 404,
+                      "src": "465:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 296,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "465:30:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 297,
+                  "nodeType": "ExpressionStatement",
+                  "src": "465:30:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 303,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "518:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          ],
+                          "id": 302,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "510:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 301,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "510:7:1",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 304,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "510:13:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "hexValue": "323030303030",
+                        "id": 305,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "524:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_200000_by_1",
+                          "typeString": "int_const 200000"
+                        },
+                        "value": "200000"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_200000_by_1",
+                          "typeString": "int_const 200000"
+                        }
+                      ],
+                      "expression": {
+                        "id": 298,
+                        "name": "usd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 269,
+                        "src": "501:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_usdToken_$1090",
+                          "typeString": "contract usdToken"
+                        }
+                      },
+                      "id": 300,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "mint",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1085,
+                      "src": "501:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 306,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "501:30:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 307,
+                  "nodeType": "ExpressionStatement",
+                  "src": "501:30:1"
+                }
+              ]
+            },
+            "id": 309,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 274,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 271,
+                  "mutability": "mutable",
+                  "name": "ethtoken",
+                  "nameLocation": "358:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 309,
+                  "src": "342:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 270,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "342:15:1",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 273,
+                  "mutability": "mutable",
+                  "name": "usdtoken",
+                  "nameLocation": "383:8:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 309,
+                  "src": "367:24:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "367:15:1",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "341:51:1"
+            },
+            "returnParameters": {
+              "id": 275,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "400:0:1"
+            },
+            "scope": 352,
+            "src": "330:205:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 327,
+              "nodeType": "Block",
+              "src": "597:63:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 321,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "632:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          ],
+                          "id": 320,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "624:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 319,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "624:7:1",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 322,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "624:13:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 323,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 311,
+                        "src": "638:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 324,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 313,
+                        "src": "646:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 316,
+                        "name": "eth",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 266,
+                        "src": "607:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_etherToken_$409",
+                          "typeString": "contract etherToken"
+                        }
+                      },
+                      "id": 318,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 391,
+                      "src": "607:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 325,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "607:46:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 326,
+                  "nodeType": "ExpressionStatement",
+                  "src": "607:46:1"
+                }
+              ]
+            },
+            "functionSelector": "bb405677",
+            "id": 328,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tradeEth",
+            "nameLocation": "546:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 314,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 311,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "563:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 328,
+                  "src": "555:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 310,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 313,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "580:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 328,
+                  "src": "572:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 312,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "572:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "554:33:1"
+            },
+            "returnParameters": {
+              "id": 315,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "597:0:1"
+            },
+            "scope": 352,
+            "src": "537:123:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 346,
+              "nodeType": "Block",
+              "src": "722:63:1",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 340,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "757:4:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Dex2_$352",
+                              "typeString": "contract Dex2"
+                            }
+                          ],
+                          "id": 339,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "749:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 338,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "749:7:1",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 341,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "749:13:1",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 342,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "763:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 343,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 332,
+                        "src": "771:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 335,
+                        "name": "usd",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 269,
+                        "src": "732:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_usdToken_$1090",
+                          "typeString": "contract usdToken"
+                        }
+                      },
+                      "id": 337,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1072,
+                      "src": "732:16:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 344,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "732:46:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 345,
+                  "nodeType": "ExpressionStatement",
+                  "src": "732:46:1"
+                }
+              ]
+            },
+            "functionSelector": "1324b42d",
+            "id": 347,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tradeUSD",
+            "nameLocation": "671:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 333,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 330,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "688:7:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 347,
+                  "src": "680:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 329,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "680:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 332,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "705:6:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 347,
+                  "src": "697:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 331,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "697:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "679:33:1"
+            },
+            "returnParameters": {
+              "id": 334,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "722:0:1"
+            },
+            "scope": 352,
+            "src": "662:123:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 350,
+              "nodeType": "Block",
+              "src": "815:2:1",
+              "statements": []
+            },
+            "id": 351,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 348,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:2:1"
+            },
+            "returnParameters": {
+              "id": 349,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "815:0:1"
+            },
+            "scope": 352,
+            "src": "788:29:1",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 353,
+        "src": "240:579:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:819:1"
+  },
+  "bytecode": "608060405234801561001057600080fd5b506040516103c53803806103c583398101604081905261002f9161013d565b600080546001600160a01b038481166001600160a01b0319928316811790935560018054918516919092161790556040516340c10f1960e01b8152306004820152620186a060248201526340c10f1990604401600060405180830381600087803b15801561009c57600080fd5b505af11580156100b0573d6000803e3d6000fd5b50506001546040516340c10f1960e01b815230600482015262030d4060248201526001600160a01b0390911692506340c10f199150604401600060405180830381600087803b15801561010257600080fd5b505af1158015610116573d6000803e3d6000fd5b505050505050610170565b80516001600160a01b038116811461013857600080fd5b919050565b6000806040838503121561015057600080fd5b61015983610121565b915061016760208401610121565b90509250929050565b6102468061017f6000396000f3fe6080604052600436106100435760003560e01c80631324b42d1461004f5780638c7c9e0c14610071578063bb405677146100ad578063d63a6ccd146100cd57600080fd5b3661004a57005b600080fd5b34801561005b57600080fd5b5061006f61006a3660046101af565b6100ed565b005b34801561007d57600080fd5b50600054610091906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b3480156100b957600080fd5b5061006f6100c83660046101af565b610170565b3480156100d957600080fd5b50600154610091906001600160a01b031681565b6001546040516323b872dd60e01b81523060048201526001600160a01b03848116602483015260448201849052909116906323b872dd906064015b6020604051808303816000875af1158015610147573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061016b91906101e7565b505050565b6000546040516323b872dd60e01b81523060048201526001600160a01b03848116602483015260448201849052909116906323b872dd90606401610128565b600080604083850312156101c257600080fd5b82356001600160a01b03811681146101d957600080fd5b946020939093013593505050565b6000602082840312156101f957600080fd5b8151801515811461020957600080fd5b939250505056fea2646970667358221220cc5e5a49e6f3b27b527ac3ac766b723053031c4dd61ac2d38c63de9dd2d658e164736f6c634300080c0033",
+  "bytecodeSha1": "5fe468b4e15bce0791c21b3d9b18d37015223e60",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.8.12+commit.f00d7308"
+  },
+  "contractName": "Dex2",
+  "coverageMap": {
+    "branches": {
+      "1": {},
+      "2": {},
+      "8": {},
+      "9": {}
+    },
+    "statements": {
+      "1": {
+        "Dex2.tradeEth": {
+          "1": [
+            607,
+            653
+          ]
+        },
+        "Dex2.tradeUSD": {
+          "0": [
+            732,
+            778
+          ]
+        }
+      },
+      "2": {},
+      "8": {},
+      "9": {}
+    }
+  },
+  "dependencies": [
+    "SafeMath",
+    "etherToken",
+    "usdToken"
+  ],
+  "deployedBytecode": "6080604052600436106100435760003560e01c80631324b42d1461004f5780638c7c9e0c14610071578063bb405677146100ad578063d63a6ccd146100cd57600080fd5b3661004a57005b600080fd5b34801561005b57600080fd5b5061006f61006a3660046101af565b6100ed565b005b34801561007d57600080fd5b50600054610091906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b3480156100b957600080fd5b5061006f6100c83660046101af565b610170565b3480156100d957600080fd5b50600154610091906001600160a01b031681565b6001546040516323b872dd60e01b81523060048201526001600160a01b03848116602483015260448201849052909116906323b872dd906064015b6020604051808303816000875af1158015610147573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061016b91906101e7565b505050565b6000546040516323b872dd60e01b81523060048201526001600160a01b03848116602483015260448201849052909116906323b872dd90606401610128565b600080604083850312156101c257600080fd5b82356001600160a01b03811681146101d957600080fd5b946020939093013593505050565b6000602082840312156101f957600080fd5b8151801515811461020957600080fd5b939250505056fea2646970667358221220cc5e5a49e6f3b27b527ac3ac766b723053031c4dd61ac2d38c63de9dd2d658e164736f6c634300080c0033",
+  "deployedSourceMap": "240:579:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;662:123;;;;;;;;;;-1:-1:-1;662:123:1;;;;;:::i;:::-;;:::i;:::-;;284:21;;;;;;;;;;-1:-1:-1;284:21:1;;;;-1:-1:-1;;;;;284:21:1;;;;;;-1:-1:-1;;;;;563:32:10;;;545:51;;533:2;518:18;284:21:1;;;;;;;537:123;;;;;;;;;;-1:-1:-1;537:123:1;;;;;:::i;:::-;;:::i;308:19::-;;;;;;;;;;-1:-1:-1;308:19:1;;;;-1:-1:-1;;;;;308:19:1;;;662:123;732:3;;:46;;-1:-1:-1;;;732:46:1;;757:4;732:46;;;1080:34:10;-1:-1:-1;;;;;1150:15:10;;;1130:18;;;1123:43;1182:18;;;1175:34;;;732:3:1;;;;:16;;1015:18:10;;732:46:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;662:123;;:::o;537:::-;607:3;;:46;;-1:-1:-1;;;607:46:1;;632:4;607:46;;;1080:34:10;-1:-1:-1;;;;;1150:15:10;;;1130:18;;;1123:43;1182:18;;;1175:34;;;607:3:1;;;;:16;;1015:18:10;;607:46:1;840:375:10;14:354;82:6;90;143:2;131:9;122:7;118:23;114:32;111:52;;;159:1;156;149:12;111:52;185:23;;-1:-1:-1;;;;;237:31:10;;227:42;;217:70;;283:1;280;273:12;217:70;306:5;358:2;343:18;;;;330:32;;-1:-1:-1;;;14:354:10:o;1220:277::-;1287:6;1340:2;1328:9;1319:7;1315:23;1311:32;1308:52;;;1356:1;1353;1346:12;1308:52;1388:9;1382:16;1441:5;1434:13;1427:21;1420:5;1417:32;1407:60;;1463:1;1460;1453:12;1407:60;1486:5;1220:277;-1:-1:-1;;;1220:277:10:o",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    240,
+    819
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT PUSH2 0x43 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x1324B42D EQ PUSH2 0x4F JUMPI DUP1 PUSH4 0x8C7C9E0C EQ PUSH2 0x71 JUMPI DUP1 PUSH4 0xBB405677 EQ PUSH2 0xAD JUMPI DUP1 PUSH4 0xD63A6CCD EQ PUSH2 0xCD JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLDATASIZE PUSH2 0x4A JUMPI STOP JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x5B JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0x6A CALLDATASIZE PUSH1 0x4 PUSH2 0x1AF JUMP JUMPDEST PUSH2 0xED JUMP JUMPDEST STOP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0x7D JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x0 SLOAD PUSH2 0x91 SWAP1 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x40 MLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xB9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x6F PUSH2 0xC8 CALLDATASIZE PUSH1 0x4 PUSH2 0x1AF JUMP JUMPDEST PUSH2 0x170 JUMP JUMPDEST CALLVALUE DUP1 ISZERO PUSH2 0xD9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x1 SLOAD PUSH2 0x91 SWAP1 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 JUMP JUMPDEST PUSH1 0x1 SLOAD PUSH1 0x40 MLOAD PUSH4 0x23B872DD PUSH1 0xE0 SHL DUP2 MSTORE ADDRESS PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP5 DUP2 AND PUSH1 0x24 DUP4 ADD MSTORE PUSH1 0x44 DUP3 ADD DUP5 SWAP1 MSTORE SWAP1 SWAP2 AND SWAP1 PUSH4 0x23B872DD SWAP1 PUSH1 0x64 ADD JUMPDEST PUSH1 0x20 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 PUSH1 0x0 DUP8 GAS CALL ISZERO DUP1 ISZERO PUSH2 0x147 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x1F NOT PUSH1 0x1F DUP3 ADD AND DUP3 ADD DUP1 PUSH1 0x40 MSTORE POP DUP2 ADD SWAP1 PUSH2 0x16B SWAP2 SWAP1 PUSH2 0x1E7 JUMP JUMPDEST POP POP POP JUMP JUMPDEST PUSH1 0x0 SLOAD PUSH1 0x40 MLOAD PUSH4 0x23B872DD PUSH1 0xE0 SHL DUP2 MSTORE ADDRESS PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP5 DUP2 AND PUSH1 0x24 DUP4 ADD MSTORE PUSH1 0x44 DUP3 ADD DUP5 SWAP1 MSTORE SWAP1 SWAP2 AND SWAP1 PUSH4 0x23B872DD SWAP1 PUSH1 0x64 ADD PUSH2 0x128 JUMP JUMPDEST PUSH1 0x0 DUP1 PUSH1 0x40 DUP4 DUP6 SUB SLT ISZERO PUSH2 0x1C2 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP3 CALLDATALOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB DUP2 AND DUP2 EQ PUSH2 0x1D9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP5 PUSH1 0x20 SWAP4 SWAP1 SWAP4 ADD CALLDATALOAD SWAP4 POP POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP3 DUP5 SUB SLT ISZERO PUSH2 0x1F9 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP2 MLOAD DUP1 ISZERO ISZERO DUP2 EQ PUSH2 0x209 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST SWAP4 SWAP3 POP POP POP JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xCC 0x5E GAS 0x49 0xE6 RETURN 0xB2 PUSH28 0x527AC3AC766B723053031C4DD61AC2D38C63DE9DD2D658E164736F6C PUSH4 0x4300080C STOP CALLER ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "7": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "8": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "LT",
+      "path": "1"
+    },
+    "9": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x43"
+    },
+    "12": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "13": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "15": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "CALLDATALOAD",
+      "path": "1"
+    },
+    "16": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0xE0"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "SHR",
+      "path": "1"
+    },
+    "19": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x1324B42D"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x4F"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "30": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x8C7C9E0C"
+    },
+    "36": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "37": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x71"
+    },
+    "40": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "41": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0xBB405677"
+    },
+    "47": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "48": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xAD"
+    },
+    "51": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "52": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0xD63A6CCD"
+    },
+    "58": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "EQ",
+      "path": "1"
+    },
+    "59": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xCD"
+    },
+    "62": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "63": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "67": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "68": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "69": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x4A"
+    },
+    "72": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "73": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "STOP",
+      "path": "1"
+    },
+    "74": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "77": {
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "78": {
+      "first_revert": true,
+      "fn": null,
+      "offset": [
+        240,
+        819
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "79": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "80": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "CALLVALUE",
+      "path": "1"
+    },
+    "81": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "82": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "83": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x5B"
+    },
+    "86": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "87": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "89": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "90": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "91": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "92": {
+      "op": "POP"
+    },
+    "93": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x6F"
+    },
+    "96": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x6A"
+    },
+    "99": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "100": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "102": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x1AF"
+    },
+    "105": {
+      "fn": "Dex2.tradeUSD",
+      "jump": "i",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "106": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "107": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xED"
+    },
+    "110": {
+      "fn": "Dex2.tradeUSD",
+      "jump": "i",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "111": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "112": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "STOP",
+      "path": "1"
+    },
+    "113": {
+      "offset": [
+        284,
+        305
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "114": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "CALLVALUE",
+      "path": "1"
+    },
+    "115": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "116": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "117": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x7D"
+    },
+    "120": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "121": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "123": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "124": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "125": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "126": {
+      "op": "POP"
+    },
+    "127": {
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "129": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "130": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x91"
+    },
+    "133": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "134": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "136": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "138": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "140": {
+      "op": "SHL"
+    },
+    "141": {
+      "op": "SUB"
+    },
+    "142": {
+      "offset": [
+        284,
+        305
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "143": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "144": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "145": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "146": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "148": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "149": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "151": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "153": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "155": {
+      "op": "SHL"
+    },
+    "156": {
+      "op": "SUB"
+    },
+    "157": {
+      "op": "SWAP1"
+    },
+    "158": {
+      "op": "SWAP2"
+    },
+    "159": {
+      "op": "AND"
+    },
+    "160": {
+      "op": "DUP2"
+    },
+    "161": {
+      "op": "MSTORE"
+    },
+    "162": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "164": {
+      "op": "ADD"
+    },
+    "165": {
+      "offset": [
+        284,
+        305
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "167": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "168": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "169": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "170": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "SUB",
+      "path": "1"
+    },
+    "171": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "172": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        284,
+        305
+      ],
+      "op": "RETURN",
+      "path": "1"
+    },
+    "173": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "174": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "CALLVALUE",
+      "path": "1"
+    },
+    "175": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "176": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "177": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xB9"
+    },
+    "180": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "181": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "183": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "184": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "185": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "186": {
+      "op": "POP"
+    },
+    "187": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x6F"
+    },
+    "190": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xC8"
+    },
+    "193": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "CALLDATASIZE",
+      "path": "1"
+    },
+    "194": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "196": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x1AF"
+    },
+    "199": {
+      "fn": "Dex2.tradeEth",
+      "jump": "i",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "200": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "201": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x170"
+    },
+    "204": {
+      "fn": "Dex2.tradeEth",
+      "jump": "i",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "205": {
+      "offset": [
+        308,
+        327
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "206": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "CALLVALUE",
+      "path": "1"
+    },
+    "207": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "208": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "209": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0xD9"
+    },
+    "212": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "213": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "215": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "216": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "217": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "218": {
+      "op": "POP"
+    },
+    "219": {
+      "offset": [
+        308,
+        327
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x1"
+    },
+    "221": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "222": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x91"
+    },
+    "225": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "226": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "228": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "230": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "232": {
+      "op": "SHL"
+    },
+    "233": {
+      "op": "SUB"
+    },
+    "234": {
+      "offset": [
+        308,
+        327
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "235": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "236": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        308,
+        327
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "237": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "238": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 0,
+      "value": "0x1"
+    },
+    "240": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "241": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "243": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "244": {
+      "op": "PUSH4",
+      "value": "0x23B872DD"
+    },
+    "249": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "251": {
+      "op": "SHL"
+    },
+    "252": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "253": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "254": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        757,
+        761
+      ],
+      "op": "ADDRESS",
+      "path": "1"
+    },
+    "255": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "257": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "258": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "259": {
+      "op": "MSTORE"
+    },
+    "260": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "262": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "264": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "266": {
+      "op": "SHL"
+    },
+    "267": {
+      "op": "SUB"
+    },
+    "268": {
+      "op": "DUP5"
+    },
+    "269": {
+      "op": "DUP2"
+    },
+    "270": {
+      "op": "AND"
+    },
+    "271": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "273": {
+      "op": "DUP4"
+    },
+    "274": {
+      "op": "ADD"
+    },
+    "275": {
+      "op": "MSTORE"
+    },
+    "276": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "278": {
+      "op": "DUP3"
+    },
+    "279": {
+      "op": "ADD"
+    },
+    "280": {
+      "op": "DUP5"
+    },
+    "281": {
+      "op": "SWAP1"
+    },
+    "282": {
+      "op": "MSTORE"
+    },
+    "283": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "284": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "285": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "286": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        735
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "287": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        748
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x23B872DD"
+    },
+    "292": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        748
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "293": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "295": {
+      "op": "ADD"
+    },
+    "296": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "297": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "299": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "301": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "302": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "303": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP4",
+      "path": "1"
+    },
+    "304": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "SUB",
+      "path": "1"
+    },
+    "305": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "306": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "308": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP8",
+      "path": "1"
+    },
+    "309": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "GAS",
+      "path": "1"
+    },
+    "310": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "CALL",
+      "path": "1"
+    },
+    "311": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "312": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "313": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ISZERO",
+      "path": "1"
+    },
+    "314": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x147"
+    },
+    "317": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "JUMPI",
+      "path": "1"
+    },
+    "318": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "1"
+    },
+    "319": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "321": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "322": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "RETURNDATACOPY",
+      "path": "1"
+    },
+    "323": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "1"
+    },
+    "324": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x0"
+    },
+    "326": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "REVERT",
+      "path": "1"
+    },
+    "327": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "328": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "329": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "330": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "331": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "332": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "334": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "335": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "1"
+    },
+    "336": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x1F"
+    },
+    "338": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "NOT",
+      "path": "1"
+    },
+    "339": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x1F"
+    },
+    "341": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "342": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "343": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "344": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "345": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "346": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "347": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "349": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "350": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "351": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "352": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "353": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "354": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x16B"
+    },
+    "357": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "358": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "359": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x1E7"
+    },
+    "362": {
+      "fn": "Dex2.tradeUSD",
+      "jump": "i",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "363": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "364": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        732,
+        778
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "365": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "366": {
+      "fn": "Dex2.tradeUSD",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "POP",
+      "path": "1"
+    },
+    "367": {
+      "fn": "Dex2.tradeUSD",
+      "jump": "o",
+      "offset": [
+        662,
+        785
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "368": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        537,
+        660
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "369": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 1,
+      "value": "0x0"
+    },
+    "371": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "SLOAD",
+      "path": "1"
+    },
+    "372": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x40"
+    },
+    "374": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "375": {
+      "op": "PUSH4",
+      "value": "0x23B872DD"
+    },
+    "380": {
+      "op": "PUSH1",
+      "value": "0xE0"
+    },
+    "382": {
+      "op": "SHL"
+    },
+    "383": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "384": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "385": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        632,
+        636
+      ],
+      "op": "ADDRESS",
+      "path": "1"
+    },
+    "386": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x4"
+    },
+    "388": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "389": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "390": {
+      "op": "MSTORE"
+    },
+    "391": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "393": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "395": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "397": {
+      "op": "SHL"
+    },
+    "398": {
+      "op": "SUB"
+    },
+    "399": {
+      "op": "DUP5"
+    },
+    "400": {
+      "op": "DUP2"
+    },
+    "401": {
+      "op": "AND"
+    },
+    "402": {
+      "op": "PUSH1",
+      "value": "0x24"
+    },
+    "404": {
+      "op": "DUP4"
+    },
+    "405": {
+      "op": "ADD"
+    },
+    "406": {
+      "op": "MSTORE"
+    },
+    "407": {
+      "op": "PUSH1",
+      "value": "0x44"
+    },
+    "409": {
+      "op": "DUP3"
+    },
+    "410": {
+      "op": "ADD"
+    },
+    "411": {
+      "op": "DUP5"
+    },
+    "412": {
+      "op": "SWAP1"
+    },
+    "413": {
+      "op": "MSTORE"
+    },
+    "414": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "415": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "416": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "417": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        610
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "418": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        623
+      ],
+      "op": "PUSH4",
+      "path": "1",
+      "value": "0x23B872DD"
+    },
+    "423": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        623
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "424": {
+      "op": "PUSH1",
+      "value": "0x64"
+    },
+    "426": {
+      "op": "ADD"
+    },
+    "427": {
+      "fn": "Dex2.tradeEth",
+      "offset": [
+        607,
+        653
+      ],
+      "op": "PUSH2",
+      "path": "1",
+      "value": "0x128"
+    },
+    "430": {
+      "op": "JUMP"
+    },
+    "431": {
+      "op": "JUMPDEST"
+    },
+    "432": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "434": {
+      "op": "DUP1"
+    },
+    "435": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "437": {
+      "op": "DUP4"
+    },
+    "438": {
+      "op": "DUP6"
+    },
+    "439": {
+      "op": "SUB"
+    },
+    "440": {
+      "op": "SLT"
+    },
+    "441": {
+      "op": "ISZERO"
+    },
+    "442": {
+      "op": "PUSH2",
+      "value": "0x1C2"
+    },
+    "445": {
+      "op": "JUMPI"
+    },
+    "446": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "448": {
+      "op": "DUP1"
+    },
+    "449": {
+      "op": "REVERT"
+    },
+    "450": {
+      "op": "JUMPDEST"
+    },
+    "451": {
+      "op": "DUP3"
+    },
+    "452": {
+      "op": "CALLDATALOAD"
+    },
+    "453": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "455": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "457": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "459": {
+      "op": "SHL"
+    },
+    "460": {
+      "op": "SUB"
+    },
+    "461": {
+      "op": "DUP2"
+    },
+    "462": {
+      "op": "AND"
+    },
+    "463": {
+      "op": "DUP2"
+    },
+    "464": {
+      "op": "EQ"
+    },
+    "465": {
+      "op": "PUSH2",
+      "value": "0x1D9"
+    },
+    "468": {
+      "op": "JUMPI"
+    },
+    "469": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "471": {
+      "op": "DUP1"
+    },
+    "472": {
+      "op": "REVERT"
+    },
+    "473": {
+      "op": "JUMPDEST"
+    },
+    "474": {
+      "op": "SWAP5"
+    },
+    "475": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "477": {
+      "op": "SWAP4"
+    },
+    "478": {
+      "op": "SWAP1"
+    },
+    "479": {
+      "op": "SWAP4"
+    },
+    "480": {
+      "op": "ADD"
+    },
+    "481": {
+      "op": "CALLDATALOAD"
+    },
+    "482": {
+      "op": "SWAP4"
+    },
+    "483": {
+      "op": "POP"
+    },
+    "484": {
+      "op": "POP"
+    },
+    "485": {
+      "op": "POP"
+    },
+    "486": {
+      "jump": "o",
+      "op": "JUMP"
+    },
+    "487": {
+      "op": "JUMPDEST"
+    },
+    "488": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "490": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "492": {
+      "op": "DUP3"
+    },
+    "493": {
+      "op": "DUP5"
+    },
+    "494": {
+      "op": "SUB"
+    },
+    "495": {
+      "op": "SLT"
+    },
+    "496": {
+      "op": "ISZERO"
+    },
+    "497": {
+      "op": "PUSH2",
+      "value": "0x1F9"
+    },
+    "500": {
+      "op": "JUMPI"
+    },
+    "501": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "503": {
+      "op": "DUP1"
+    },
+    "504": {
+      "op": "REVERT"
+    },
+    "505": {
+      "op": "JUMPDEST"
+    },
+    "506": {
+      "op": "DUP2"
+    },
+    "507": {
+      "op": "MLOAD"
+    },
+    "508": {
+      "op": "DUP1"
+    },
+    "509": {
+      "op": "ISZERO"
+    },
+    "510": {
+      "op": "ISZERO"
+    },
+    "511": {
+      "op": "DUP2"
+    },
+    "512": {
+      "op": "EQ"
+    },
+    "513": {
+      "op": "PUSH2",
+      "value": "0x209"
+    },
+    "516": {
+      "op": "JUMPI"
+    },
+    "517": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "519": {
+      "op": "DUP1"
+    },
+    "520": {
+      "op": "REVERT"
+    },
+    "521": {
+      "op": "JUMPDEST"
+    },
+    "522": {
+      "op": "SWAP4"
+    },
+    "523": {
+      "op": "SWAP3"
+    },
+    "524": {
+      "op": "POP"
+    },
+    "525": {
+      "op": "POP"
+    },
+    "526": {
+      "op": "POP"
+    },
+    "527": {
+      "jump": "o",
+      "op": "JUMP"
+    }
+  },
+  "sha1": "70a8f788db15d593ed115300f83fe5728d36a711",
+  "source": "pragma solidity ^0.8.0;\n\nimport \"./openzeppelin/contracts/token/ERC20/IERC20.sol\";\nimport \"./openzeppelin/contracts/token/ERC20/ERC20.sol\";\nimport \"./openzeppelin/contracts/utils/math/SafeMath.sol\";\nimport \"./eth.sol\";\nimport \"./usd.sol\";\n\ncontract Dex2{\nusing SafeMath for uint256;\n etherToken public eth;\n usdToken public usd;\n\nconstructor(address payable ethtoken,address payable usdtoken) public { \n    eth=etherToken(ethtoken);\n    usd=usdToken(usdtoken);\n    eth.mint(address(this),100000);\n    usd.mint(address(this),200000);\n\n}\n\nfunction tradeEth(address account, uint256 amount) external {\n        eth.transferFrom(address(this),account,amount);\n    }\n\nfunction tradeUSD(address account, uint256 amount) external {\n        usd.transferFrom(address(this),account,amount);\n    }\n\n\nreceive() external payable {}\n}",
+  "sourceMap": "240:579:1:-:0;;;330:205;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;407:3;:24;;-1:-1:-1;;;;;407:24:1;;;-1:-1:-1;;;;;;407:24:1;;;;;;;;-1:-1:-1;437:22:1;;;;;;;;;;;;465:30;;-1:-1:-1;;;465:30:1;;482:4;465:30;;;721:51:10;488:6:1;788:18:10;;;781:34;465:8:1;;694:18:10;;465:30:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;501:3:1;;:30;;-1:-1:-1;;;501:30:1;;518:4;501:30;;;721:51:10;524:6:1;788:18:10;;;781:34;-1:-1:-1;;;;;501:3:1;;;;-1:-1:-1;501:8:1;;-1:-1:-1;694:18:10;;501:30:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;330:205;;240:579;;14:185:10;101:13;;-1:-1:-1;;;;;143:31:10;;133:42;;123:70;;189:1;186;179:12;123:70;14:185;;;:::o;204:325::-;299:6;307;360:2;348:9;339:7;335:23;331:32;328:52;;;376:1;373;366:12;328:52;399:48;437:9;399:48;:::i;:::-;389:58;;466:57;519:2;508:9;504:18;466:57;:::i;:::-;456:67;;204:325;;;;;:::o;826:287::-;240:579:1;;;;;;",
+  "sourcePath": "contracts/dex2.sol",
+  "type": "contract"
+}
