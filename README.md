@@ -15,7 +15,7 @@ Ganache v7.0.2
 
 Startup 1 terminal and run ganache
 
-Start another terminal in directory of concern and type "brownie run <scriptname>" to build files and run the script
+Start another terminal in directory of concern and type "brownie run "scriptname"" to build files and run the script
 
 
 
